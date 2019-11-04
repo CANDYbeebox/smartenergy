@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>智慧能源系统评价系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <!--顶栏-->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <!--<ul class="navbar-nav">-->
+    <!--<li class="nav-item">-->
+    <!--<a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>-->
+    <!--</li>-->
+    <!--<li class="nav-item d-none d-sm-inline-block">-->
+    <!--<a href="index3.html" class="nav-link">Home</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item d-none d-sm-inline-block">-->
+    <!--<a href="#" class="nav-link">Contact</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+
+    <!-- SEARCH FORM -->
+    <!--<form class="form-inline ml-3">-->
+    <!--<div class="input-group input-group-sm">-->
+    <!--<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">-->
+    <!--<div class="input-group-append">-->
+    <!--<button class="btn btn-navbar" type="submit">-->
+    <!--<i class="fas fa-search"></i>-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</form>-->
+
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <!--<i class="far fa-comments"></i>-->
+          <span class="badge badge-info">管理员</span>
+        </a>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <span class="badge badge-light">张三</span>
+        </a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <span class="badge badge-warning">退出登录</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <!--侧边栏-->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <span class="brand-text font-weight-light">智慧能源系统评价系统</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!--&lt;!&ndash; Sidebar user panel (optional) &ndash;&gt;-->
+      <!--<div class="user-panel mt-3 pb-3 mb-3 d-flex">-->
+      <!--<div class="image">-->
+      <!--<img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">-->
+      <!--</div>-->
+      <!--<div class="info">-->
+      <!--<a href="#" class="d-block">Alexander Pierce</a>-->
+      <!--</div>-->
+      <!--</div>-->
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                用户管理
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./evaluate.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>角色管理</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./result.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>权限管理</p>
+                </a>
+              </li>
+            </ul>
+
+          </li>
+
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                指标管理
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                综合评价
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./evaluate.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>专家评分</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./result.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>结果查询</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">指标管理</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!--<p style="text-align: center">层次分析法指标赋权</p>-->
+
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-12 col-12">
+            <div class="card card-gray">
+              <div class="card-header">
+                <h3 style="text-align: center">比例标度表</h3>
+              </div>
+              <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th style="width: 10%">标度</th>
+                  <th style="width: 40%;text-align: center;">含义</th>
+                  <th style="width: 10%">标度</th>
+                  <th style="width: 40%;text-align: center;">含义</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>表示两个因素相比，具有相同重要性</td>
+                  <td>7</td>
+                  <td>表示两个因素相比，前者比后者强烈重要</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>表示两个因素相比，前者比后者稍重要</td>
+                  <td>9</td>
+                  <td>表示两个因素相比，前者比后者极端重要</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>表示两个因素相比，前者比后者明显重要</td>
+                  <td>2,4,6,8</td>
+                  <td>表示上述相邻判断的中间值</td>
+                </tr>
+                <tr>
+                  <td>倒数</td>
+                  <td>若因素i与因素j的重要性之比是a，那么因素j与因素i的重要性之比是1/a</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-5 col-5">
+          <div class="card card-purple">
+            <div class="card-header">
+              <h3 style="text-align: center">平均随机一致性指标RI标准值</h3>
+            </div>
+            <table class="table table-bordered table-striped">
+              <tbody>
+              <tr>
+                <td style="color: #1F2D3D">矩阵阶数</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td style="color: #1F2D3D">RI</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0.58</td>
+                <td>0.90</td>
+                <td>1.12</td>
+                <td>1.24</td>
+                <td>1.32</td>
+                <td>1.41</td>
+                <td>1.45</td>
+                <td>1.49</td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="col-lg-7 col-7">
+          <div class="card card-purple">
+            <div class="card-header">
+              <h3 style="text-align: center">指标与权重</h3>
+            </div>
+            <table class="table table-bordered table-striped">
+              <tbody>
+              <tr>
+                <td style="color: #1F2D3D">指标  <button type="submit">点击进行修改</button>
+                </td>
+                <td>自动化水平</td>
+                <td>互动化水平</td>
+                <td>信息化水平</td>
+                <td>安全可靠性</td>
+                <td>经济效益性</td>
+                <td>环境友好性</td>
+              </tr>
+              <tr>
+                <td style="color: #1F2D3D">权重系数</td>
+                <td>0.444</td>
+                <td>0.105</td>
+                <td>0.250</td>
+                <td>0.090</td>
+                <td>0.066</td>
+                <td>0.044</td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-lg-7 col-7">
+          <div class="card card-green">
+            <div class="card-header">
+              <h3 style="text-align: center">输入判断矩阵</h3>
+            </div>
+
+            <table class="table table-bordered table-striped">
+              <tbody>
+              <tr>
+                <td style="width: 120px"></td>
+                <td>自动化水平</td>
+                <td>互动化水平</td>
+                <td>信息化水平</td>
+                <td>安全可靠性</td>
+                <td>经济效益性</td>
+                <td>环境友好性</td>
+              <tr>
+                <td>自动化水平</td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+              </tr>
+
+              <tr>
+                <td>互动化水平</td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+              </tr>
+
+              <tr>
+                <td>信息化水平</td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+              </tr>
+              <tr>
+                <td>安全可靠性</td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+              </tr>
+              <tr>
+                <td>经济效益性</td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+              </tr>
+              <tr>
+                <td>环境友好性</td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="col-lg-1 col-1">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <button type="submit" class="btn btn-lg btn-primary">计算</button>
+          <br>
+          <br>
+          <button type="submit" class="btn btn-lg btn-secondary">重置</button>
+
+        </div>
+        <div class="col-lg-4 col-4">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 style="text-align: center">计算结果</h3>
+            </div>
+
+            <!--<div class="card-body" >-->
+            <table class="table table-bordered table-striped">
+              <tr>
+                <td>最大特征根</td>
+                <td>6.587</td>
+              </tr>
+              <!--<tr>-->
+                <!--<td>特征向量</td>-->
+                <!--<td></td>-->
+              <!--</tr>-->
+              <tr>
+                <td>特征向量归一化，权重向量</td>
+                <td>[0.444, 0.105, 0.250, 0.090, 0.066, 0.044]</td>
+              </tr>
+              <tr>
+                <td>一致性指标CI</td>
+                <td>0.1174</td>
+              </tr>
+              <tr>
+                <td>随机一致性指标RI</td>
+                <td>1.24</td>
+              </tr>
+              <tr>
+                <td>检验系数CR</td>
+                <td>0.095</td>
+              </tr>
+              <tr>
+                <td>结论</td>
+                <td>CR小于0.1,满足一致性要求</td>
+              </tr>
+            </table>
+            <!--</div>-->
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- /.row -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper --
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+</body>
+</html>
