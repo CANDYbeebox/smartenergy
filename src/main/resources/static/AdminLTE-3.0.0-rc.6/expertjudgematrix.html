@@ -114,8 +114,9 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 用户管理
@@ -124,13 +125,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="usermanage.html" class="nav-link active">
+                <a href="./evaluate.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>角色管理</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="usermanage.html" class="nav-link">
+                <a href="./result.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>权限管理</p>
                 </a>
@@ -140,11 +141,10 @@
           </li>
 
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 指标管理
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
           </li>
@@ -185,8 +185,8 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <button class="btn-primary btn-lg">添加角色</button>
+          <div class="col-sm-12">
+            <h1 class="m-0 text-dark">敬爱的专家，请您根据比例标度表输入判断矩阵</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -201,65 +201,136 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-lg-12 col-12">
-            <div class="card">
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table" style="font-size: large">
-                  <thead>
-                  <tr>
-                    <th>用户名</th>
-                    <th>角色</th>
-                    <th>拥有权限</th>
-                    <th></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>张三</td>
-                    <td>管理员
-                      <button class="btn btn-primary">修改</button>
-                    </td>
-                    <td>
-                      <p>查看指标信息</p>
-                      <p>查看评分</p>
-                      <p>修改指标</p>
-                      <p>修改角色与权限</p>
-                      <p>输入判断矩阵</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>李四</td>
-                    <td>专家
-                      <button class="btn btn-primary">修改</button>
-                    </td>
-                    <td>
-                      <p>查看指标信息</p>
-                      <p>查看评分</p>
-                      <p>提交专家调查表</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>王五</td>
-                    <td>普通用户
-                      <button class="btn btn-primary">修改</button>
-                    </td>
-                    <td>
-                      <p>查看指标信息</p>
-                      <p>查看评分</p>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
+            <div class="card card-gray">
+              <div class="card-header">
+                <h3 style="text-align: center">比例标度表</h3>
               </div>
-              <!-- /.card-body -->
+              <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th style="width: 10%">标度</th>
+                  <th style="width: 40%;text-align: center;">含义</th>
+                  <th style="width: 10%">标度</th>
+                  <th style="width: 40%;text-align: center;">含义</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>表示两个因素相比，具有相同重要性</td>
+                  <td>7</td>
+                  <td>表示两个因素相比，前者比后者强烈重要</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>表示两个因素相比，前者比后者稍重要</td>
+                  <td>9</td>
+                  <td>表示两个因素相比，前者比后者极端重要</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>表示两个因素相比，前者比后者明显重要</td>
+                  <td>2,4,6,8</td>
+                  <td>表示上述相邻判断的中间值</td>
+                </tr>
+                <tr>
+                  <td>倒数</td>
+                  <td>若因素i与因素j的重要性之比是a，那么因素j与因素i的重要性之比是1/a</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
             </div>
-
 
           </div>
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-lg-7 col-7">
+          <div class="card card-green">
+            <div class="card-header">
+              <h3 style="text-align: center">输入判断矩阵</h3>
+            </div>
 
+            <table class="table table-bordered table-striped">
+              <tbody>
+              <tr>
+                <td style="width: 120px"></td>
+                <td>供能可靠性</td>
+                <td>经济效益性</td>
+                <td>环境友好性</td>
+                <td>资源节约性</td>
+                <td>智能互动性</td>
+                <td>社会效益性</td>
+              <tr>
+                <td>供能可靠性</td>
+                <td align="center">1</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+              </tr>
+
+              <tr>
+                <td>经济效益性</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center">1</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+              </tr>
+
+              <tr>
+                <td>环境友好性</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center">1</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+
+              </tr>
+              <tr>
+                <td>资源节约性</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center">1</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+
+              </tr>
+              <tr>
+                <td>智能互动性</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center">1</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+
+              </tr>
+              <tr>
+                <td>社会效益性</td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center"><input type="text" class="form-control" style="width: 50%;text-align: center"></td>
+                <td align="center">1</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+
+      </div>
 
 
       <!-- /.row -->
