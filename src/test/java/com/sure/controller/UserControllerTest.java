@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 /**
  * Created by SURE on ${DATA}.
  */
-@PerfTest(invocations = 1000, threads = 40)
+@PerfTest(invocations = 1, threads = 40)
 @Required(max = 1200, average = 250, totalTime = 6000)
 public class UserControllerTest {
     @Autowired
@@ -22,6 +22,14 @@ public class UserControllerTest {
 
     @org.junit.Test
     public void login() throws Exception {
+        System.out.println(-0.049942192784518155 / -0.121313);
+        System.out.println(-0.22375591395040406 / -0.121313);
+        System.out.println(-0.06925283185331525 / -0.121313);
+        System.out.println(0.005532960772633767 / -0.121313);
+        System.out.println(0.09054703566182792 / -0.121313);
+        System.out.println(0.12555588526941702 / -0.121313);
+        System.out.println(-0.049942192784518155 / -0.121313 + -0.22375591395040406 / -0.121313 + -0.06925283185331525 / -0.121313 + 0.005532960772633767 / -0.121313
+        + 0.09054703566182792 / -0.121313 + 0.12555588526941702 / -0.121313);
         System.out.println((1 - 0.01507) / 0.01507);
         Thread.sleep(20);
     }

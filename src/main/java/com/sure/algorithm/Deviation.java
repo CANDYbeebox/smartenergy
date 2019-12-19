@@ -49,7 +49,7 @@ public class Deviation {
         double[] sumOfColumn = new double[regionCnt];
         for (int i = 0; i < targetCnt; i++) {
             for (int j = 0; j < regionCnt; j++) {
-                deviationRateMatrix[i][j] = (1 - scoresOfTarget[i][j] / scoresOfTarget[i][bestRegionIdx]) * weightsOfTarget.get(i);
+                deviationRateMatrix[i][j] = (scoresOfTarget[i][bestRegionIdx] - scoresOfTarget[i][j]) / (scoresOfTarget[i][bestRegionIdx] + 0.1) * weightsOfTarget.get(i);
                 sumOfColumn[j] += deviationRateMatrix[i][j];
             }
         }
@@ -60,7 +60,6 @@ public class Deviation {
                 contributionRate[i][j] = deviationRateMatrix[i][j] / sumOfColumn[j];
             }
         }
-        System.out.println("sss");
         return contributionRate;
     }
 
@@ -70,7 +69,7 @@ public class Deviation {
      * @param
      * @param data
      */
-    public void analyzeIndex(double[][] contributionRate, int regionIdx, List<List<Double>> data, int[][] dataLocation, List<List<Double>> weightsOfIndex) {
+    public double[] analyzeIndex(double[][] contributionRate, int regionIdx, List<List<Double>> data, int[][] dataLocation, List<List<Double>> weightsOfIndex) {
         //1.数据归一化
         dataNormalization(data);
         //2.找到偏差贡献率最大的属性
@@ -90,7 +89,7 @@ public class Deviation {
         double indexContributeSum = 0;
         for (int i = start; i < end; i++) {
             List<Double> curIndexData = data.get(i);
-            indexContribute[i - start] = currentWeight.get(i - start) * (data.get(i).get(bestRegionIdx) - data.get(i).get(regionIdx)) / data.get(i).get(bestRegionIdx);
+            indexContribute[i - start] = currentWeight.get(i - start) * (curIndexData.get(bestRegionIdx) - curIndexData.get(regionIdx)) / (curIndexData.get(bestRegionIdx) + 0.1);
             indexContributeSum += indexContribute[i - start];
         }
         //4.计算指标贡献偏差
@@ -99,6 +98,7 @@ public class Deviation {
             indexContributeRate[i] = indexContribute[i] / indexContributeSum;
         }
 
+        return indexContributeRate;
 
     }
 
@@ -115,8 +115,29 @@ public class Deviation {
     }
 
     private static Scanner s;
+    private static  Scanner sc;
 
     public static void main(String[] args) {
+        List<List<Double>> matrix = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("originData.txt"))) {
+            String tmp = null;
+            for (int j = 0; j < 22; j++) {
+                tmp = br.readLine();
+                sc = new Scanner(tmp);
+                if (j >= 0) {
+                    List<Double> one = new ArrayList<>();
+                    for (int i = 0; i < 9; i++) {
+                        one.add(sc.nextDouble());
+                    }
+                    matrix.add(one);
+                }
+
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         List<Topsis.Alternative> al = new LinkedList<Topsis.Alternative>();
         Double[] weights = {24.81,
@@ -153,7 +174,7 @@ public class Deviation {
         double[] C1 = new double[topsis.indexCnt];
         double[] C2 = new double[topsis.indexCnt];
         double[] C3 = new double[topsis.indexCnt];
-        try (BufferedReader br = new BufferedReader(new FileReader("originData.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("deviationData.txt"))) {
             String tmp = null;
             for (int i = 0; i < 22; i++) {
                 tmp = br.readLine();
@@ -218,7 +239,7 @@ public class Deviation {
         Topsis topsis5 = new Topsis(3, weigt.subList(15, 18));
         alternative5.add(topsis5.new Alternative("A3FIVE", new double[]{A3[15], A3[16], A3[17]}));
         alternative5.add(topsis5.new Alternative("B3FIVE", new double[]{B3[15], B3[16], B3[17]}));
-        alternative5.add(topsis5.new Alternative("C3FIVE", new double[]{C3[15], C3[15], C3[17]}));
+        alternative5.add(topsis5.new Alternative("C3FIVE", new double[]{C3[15], C3[16], C3[17]}));
 
         List<Topsis.Alternative> alternative6 = new ArrayList<>();
         als.add(alternative6);
@@ -240,7 +261,10 @@ public class Deviation {
 
         List<Double> weightsOfTarget = Arrays.asList(0.15, 0.15, 0.10, 0.10, 0.25, 0.25);
 
-        deviation.computeDevaition(Arrays.asList(6, 5, 2, 2, 3, 4, 22), als, weigtsss, weightsOfTarget);
+        double[][] contributionRate = deviation.computeDevaition(Arrays.asList(6, 5, 2, 2, 3, 4, 22), als, weigtsss, weightsOfTarget);
+
+        int[][] dataLocation = {{0, 6}, {6, 11}, {11, 13}, {13, 15}, {15, 18}, {18, 22}};
+        deviation.analyzeIndex(contributionRate, 0, matrix, dataLocation, weigtsss);
 
 
     }

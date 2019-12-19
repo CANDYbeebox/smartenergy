@@ -76,7 +76,8 @@ public class AHP {
 
     public static void main(String[] args) {
         AHP ahp = new AHP();
-        double[][] judgeMatrix = new double[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}};
+//        double[][] judgeMatrix = new double[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}};
+        double[][] judgeMatrix = new double[][]{{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
         double[] w = ahp.weight(judgeMatrix);
         System.out.println("111");
 
