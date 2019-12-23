@@ -186,7 +186,6 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1 class="m-0 text-dark">敬爱的专家，请您根据"比例标度表"输入判断矩阵</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -200,202 +199,155 @@
 
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-5 col-5">
+          <div class="col-lg-12 col-12">
             <div class="card card-gray">
               <div class="card-header">
-                <h3 style="text-align: center">比例标度表</h3>
+                <h3 style="text-align: center">权重表</h3>
               </div>
-              <table class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th style="width: 10%">标度</th>
-                  <th style="width: 40%;text-align: center;">含义</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>表示两个因素相比，具有相同重要性</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>表示两个因素相比，前者比后者稍重要</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>表示两个因素相比，前者比后者明显重要</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>表示两个因素相比，前者比后者强烈重要</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>表示两个因素相比，前者比后者极端重要</td>
-                </tr>
-                <tr>
-                  <td>2,4,6,8</td>
-                  <td>表示上述相邻判断的中间值</td>
-                </tr>
-                <tr>
-                  <td>倒数</td>
-                  <td>若因素i与因素j的重要性之比是a，那么因素j与因素i的重要性之比是1/a</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-          <div class="col-lg-7 col-7">
-            <div class="card card-green">
-              <div class="card-header">
-                <h3 style="text-align: center">判断矩阵示意</h3>
-              </div>
-
-              <table class="table table-bordered table-striped" style="text-align: center">
-                <tbody>
-                <tr>
-                  <td style="width: 120px"></td>
-                  <td>供能可靠性</td>
-                  <td>经济效益性</td>
-                  <td>环境友好性</td>
-                  <td>资源节约性</td>
-                  <td>智能互动性</td>
-                  <td>社会效益性</td>
-                <tr>
-                  <td>供能可靠性</td>
-                  <td align="center">1</td>
-                  <td>#</td>
-                  <td>#</td>
-                  <td>#</td>
-                  <td>#</td>
-                  <td>#</td>
-                </tr>
-
-                <tr>
-                  <td>经济效益性</td>
-                  <td>?</td>
-                  <td align="center">1</td>
-                  <td>#</td>
-                  <td>#</td>
-                  <td>#</td>
-                  <td>#</td>
-                </tr>
-                <tr>
-                  <td>环境友好性</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td align="center">1</td>
-                  <td>#</td>
-                  <td>#</td>
-                  <td>#</td>
-
-                </tr>
-                <tr>
-                  <td>资源节约性</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td align="center">1</td>
-                  <td>#</td>
-                  <td>#</td>
-
-                </tr>
-                <tr>
-                  <td>智能互动性</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td align="center">1</td>
-                  <td>#</td>
-
-                </tr>
-                <tr>
-                  <td>社会效益性</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td align="center">1</td>
-                </tr>
-                </tbody>
-              </table>
-
-              <div class="card-footer">
-                注：为减少专家工作量，只需在下面表格中给？部分评分，#部分根据？部分自动计算
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 col-12">
-            <div class="card card-orange">
-              <div class="card-header">
-                <h3 style="text-align: center">专家评语打分</h3>
-              </div>
-              <table class="table table-bordered table-striped">
+              <table class="table table-bordered" style="text-align: center;">
                 <br>
                 <div class="form-inline">
-                  <label>当前输入: 经济效益性/供能可靠性</label>
-                  &nbsp;
-                  &nbsp;
-                  &nbsp;
-                  <button class="btn-primary">提交，下一个</button>
-                  &nbsp;
-                  &nbsp;
-                  <button class="btn-warning">全部提交</button>
+                  <button class="btn-primary" data-toggle="modal" data-target="#myModal">查看权重对比图</button>
                 </div>
                 <br>
                 <thead>
                 <tr>
-                  <th>评语</th>
-                  <th>9</th>
-                  <th>8</th>
-                  <th>7</th>
-                  <th>6</th>
-                  <th>5</th>
-                  <th>4</th>
-                  <th>3</th>
-                  <th>2</th>
-                  <th>1</th>
-                  <th>1/2</th>
-                  <th>1/3</th>
-                  <th>1/4</th>
-                  <th>1/5</th>
-                  <th>1/6</th>
-                  <th>1/7</th>
-                  <th>1/8</th>
-                  <th>1/9</th>
-                  <th>不确定</th>
+                  <th>总目标</th>
+                  <th>一级指标</th>
+                  <th>一级指标权重</th>
+                  <th>二级指标</th>
+                  <th>熵权法权重</th>
+                  <th>组合权重</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>信度</td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
+                  <td rowspan="22" style="width: 10%;font-size: 60px">智慧能源系统建设水平</td>
+                  <td rowspan="6" style="line-height: 200px;font-size: 30px;width: 15%">供能可靠性</td>
+                  <td rowspan="6" style="line-height: 200px;font-size: 30px;width: 10%">0.4676</td>
+                  <td>b</td>
+                  <td>c</td>
+                  <td>d</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
 
+                <tr>
+                  <td rowspan="5" style="line-height: 200px;font-size: 30px;width: 15%">经济效益性</td>
+                  <td rowspan="5" style="line-height: 200px;font-size: 30px;width: 10%">a</td>
+                  <td>b</td>
+                  <td>c</td>
+                  <td>d</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">环境友好性</td>
+                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 10%">a</td>
+                  <td>b</td>
+                  <td>c</td>
+                  <td>d</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+
+                <tr>
+                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">资源节约性</td>
+                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 10%">a</td>
+                  <td>b</td>
+                  <td>c</td>
+                  <td>d</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+
+                <tr>
+                  <td rowspan="3" style="line-height: 100px;font-size: 30px;width: 15%">智能互动性</td>
+                  <td rowspan="3" style="line-height: 100px;font-size: 30px;width: 10%">a</td>
+                  <td>b</td>
+                  <td>c</td>
+                  <td>d</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td rowspan="4" style="line-height: 130px;font-size: 30px;width: 15%">社会效益性</td>
+                  <td rowspan="4" style="line-height: 130px;font-size: 30px;width: 10%">a</td>
+                  <td>b</td>
+                  <td>c</td>
+                  <td>d</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
 
                 </tbody>
@@ -403,13 +355,9 @@
             </div>
 
           </div>
+
         </div>
       </div>
-
-
-
-
-
       <!-- /.row -->
   </section>
   <!-- /.content -->
@@ -420,6 +368,69 @@
   <!-- Control sidebar content goes here -->
 </aside>
 <!-- /.control-sidebar -->
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 950px;">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+          <div class="card card-info">
+            <div class="card-header">
+              <h3 class="card-title" style="font-size: x-large;">权重对比图</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-1">
+              </div>
+              <div class="col-3">
+                <div class="custom-control custom-checkbox cus">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked="">
+                  <label for="customCheckbox2" class="custom-control-label" style="color: red">第一阶段</label>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="custom-control custom-checkbox cus">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox1" checked="">
+                  <label for="customCheckbox2" class="custom-control-label" style="color: black">第二阶段</label>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="custom-control custom-checkbox cus">
+                  <input class="custom-control-input" type="checkbox" id="customCheckbox3" checked="">
+                  <label for="customCheckbox2" class="custom-control-label" style="color: blue">第三阶段</label>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chart">
+                <div class="chartjs-size-monitor">
+                  <div class="chartjs-size-monitor-expand">
+                    <div class=""></div>
+                  </div>
+                  <div class="chartjs-size-monitor-shrink">
+                    <div class=""></div>
+                  </div>
+                </div>
+                <canvas id="lineChart" style="height: 251px; min-height: 250px; display: block; width: 356px;"
+                        width="267" height="188" class="chartjs-render-monitor"></canvas>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
 </div>
 <!-- ./wrapper -->
 
@@ -457,5 +468,80 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script>
+  var areaChartOptions = {
+    maintainAspectRatio: false,
+    responsive: true,
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        gridLines: {
+          display: false,
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          display: false,
+        }
+      }]
+    }
+  };
+
+  var areaChartData = {
+    labels: ['2017', '2018', '2019'],
+    datasets: [
+      {
+        label: '杭州',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'blue',
+        pointRadius: false,
+        pointColor: '#3b8bba',
+        pointStrokeColor: 'rgba(60,141,188,1)',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(60,141,188,1)',
+        data: [66, 90, 91]
+      },
+      {
+        label: '上海',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'black',
+        pointRadius: false,
+        pointColor: '#3b8bba',
+        pointStrokeColor: 'rgba(60,141,188,1)',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(60,141,188,1)',
+        data: [77, 78, 90]
+      },
+      {
+        label: '南京',
+//        backgroundColor: 'rgba(210, 214, 222, 1)',
+        borderColor: 'red',
+        pointRadius: false,
+        pointColor: 'red',
+        pointStrokeColor: 'red',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(220,220,220,1)',
+        data: [87, 89, 93]
+      },
+    ]
+  };
+
+
+  var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+  var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
+  var lineChartData = jQuery.extend(true, {}, areaChartData)
+  lineChartData.datasets[0].fill = false;
+  lineChartData.datasets[1].fill = false;
+  lineChartData.datasets[2].fill = false;
+  lineChartOptions.datasetFill = false
+
+  var lineChart = new Chart(lineChartCanvas, {
+    type: 'line',
+    data: lineChartData,
+    options: lineChartOptions
+  })
+</script>
 </body>
 </html>

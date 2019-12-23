@@ -116,7 +116,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon far fa-circle text-yellow"></i>
               <p>
                 用户管理
                 <i class="right fas fa-angle-left"></i>
@@ -124,13 +124,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./evaluate.html" class="nav-link">
+                <a href="./usermanage.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>角色管理</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./result.html" class="nav-link">
+                <a href="authoritymanage.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>权限管理</p>
                 </a>
@@ -140,33 +140,55 @@
           </li>
 
           <li class="nav-item has-treeview menu-open">
-            <a href="./smartenergy.html" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-green"></i>
               <p>
-                指标管理
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                综合评价
+                权重计算
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./evaluate.html" class="nav-link">
+                <a href="./expertjudgematrix.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>专家评分</p>
+                  <p>专家输入判断矩阵</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./result.html" class="nav-link active">
+                <a href="./d-smerge.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>结果查询</p>
+                  <p>DS融合层次分析法</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./entropy.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>熵权法与最终权重</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-blue"></i>
+              <p>
+                系统评价
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./topsis.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>综合评价</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./deviation.html" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>偏差分析</p>
                 </a>
               </li>
             </ul>
@@ -197,40 +219,111 @@
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-lg-6 col-6" style="font-size: x-large;">
+          <div class="col-lg-6 col-6" style="font-size: 19px;">
             <div class="card card-gray">
               <div class="card-header">
-                <h3 style="text-align: center">智慧能源系统评分表</h3>
+                <h3 style="text-align: center">智慧能源系统各属性评分表</h3>
               </div>
               <br>
-              <table class="table table-striped table-bordered">
+              <table class="table-bordered">
                 <thead>
                 <tr>
-                  <td></td>
-                  <td>2017</td>
-                  <td>2018</td>
-                  <td>2019</td>
+                  <td>时期</td>
+                  <td>地区</td>
+                  <td>供能可靠性</td>
+                  <td>经济效益性</td>
+                  <td>环境友好性</td>
+                  <td>资源节约性</td>
+                  <td>智能互动性</td>
+                  <td>社会效益性</td>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>南京</td>
-                  <td>87</td>
-                  <td>89</td>
-                  <td>93</td>
+                  <td rowspan="3" style="line-height: 100px">一</td>
+                  <td>A</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
                 </tr>
                 <tr>
-                  <td>杭州</td>
-                  <td>66</td>
-                  <td>90</td>
-                  <td>91</td>
+                  <td>B</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
                 </tr>
                 <tr>
-                  <td>上海</td>
-                  <td>77</td>
-                  <td>78</td>
-                  <td>90</td>
+                  <td>C</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
                 </tr>
+                <tr>
+                  <td rowspan="3" style="line-height: 100px">二</td>
+                  <td>A</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                </tr>
+                <tr>
+                  <td rowspan="3" style="line-height: 100px">三</td>
+                  <td>A</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                  <td>0.3432</td>
+                </tr>
+
                 </tbody>
               </table>
             </div>
@@ -238,7 +331,7 @@
           <div class="col-lg-6 col-6">
             <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title" style="font-size: x-large;">智慧能源系统评分图</h3>
+                <h3 class="card-title" style="font-size: x-large;">偏差走势图</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -247,11 +340,38 @@
                   </button>
                 </div>
               </div>
+              <div class="form-inline">
+                &nbsp;&nbsp;&nbsp;
+                <label>阶段</label>
+                <select class="form-control">
+                  <option>一</option>
+                  <option>二</option>
+                  <option>三</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;
+                <label>地区</label>
+                <select class="form-control">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </select>
+                <select class="form-control">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn-primary">确定</button>
+                &nbsp;
+                &nbsp;
+              </div>
+
               <div class="row">
 
                 <div class="col-1">
                 </div>
                 <div class="col-3">
+
                   <div class="custom-control custom-checkbox cus">
                     <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked="">
                     <label for="customCheckbox2" class="custom-control-label" style="color: red">南京</label>
@@ -287,9 +407,110 @@
               <!-- /.card-body -->
             </div>
           </div>
+
         </div>
 
         <div class="row">
+          <div class="col-6">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title" style="font-size: x-large;">属性偏差贡献率</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="form-inline">
+                &nbsp;&nbsp;&nbsp;
+                <label>阶段</label>
+                <select class="form-control">
+                  <option>一</option>
+                  <option>二</option>
+                  <option>三</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;
+                <label>地区</label>
+                <select class="form-control">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </select>
+                <select class="form-control">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn-primary">确定</button>
+                &nbsp;
+                &nbsp;
+              </div>
+
+              <div class="card-body">
+
+                <canvas id="pieChart" style="height:230px; min-height:230px"></canvas>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+          </div>
+          <div class="col-6">
+            <div class="card card-danger">
+              <div class="card-header">
+                <h3 class="card-title" style="font-size: x-large;">指标差异分析</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="form-inline">
+                &nbsp;&nbsp;&nbsp;
+                <label>阶段</label>
+                <select class="form-control">
+                  <option>一</option>
+                  <option>二</option>
+                  <option>三</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;
+                <label>地区</label>
+                <select class="form-control">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </select>
+                <select class="form-control">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;
+                <label>属性</label>
+                <select class="form-control">
+                  <option>供能可靠性</option>
+                  <option>经济效益性</option>
+                  <option>环境友好性</option>
+                  <option>资源节约性</option>
+                  <option>智能互动性</option>
+                  <option>社会效益性</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn-primary">确定</button>
+                &nbsp;
+                &nbsp;
+              </div>
+
+              <div class="card-body">
+                <canvas id="pieChart2" style="height:230px; min-height:230px"></canvas>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+          </div>
+
         </div>
 
       </div>
@@ -414,6 +635,60 @@
     type: 'line',
     data: lineChartData,
     options: lineChartOptions
+  })
+
+  //-------------
+  //- PIE CHART -
+  //-------------
+  // Get context with jQuery - using jQuery's .get() method.
+  var donutData        = {
+    labels: [
+      '供能可靠性','经济效益性','环境友好性','资源节约性','智能互动性','社会效益性',
+    ],
+    datasets: [
+      {
+        data: [0.2,0.2,0.2,0.2,0.2,0.2],
+        backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+      }
+    ]
+  }
+  var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+  var pieData        = donutData;
+  var pieOptions     = {
+    maintainAspectRatio : false,
+    responsive : true,
+  }
+  //Create pie or douhnut chart
+  // You can switch between pie and douhnut using the method below.
+  var pieChart = new Chart(pieChartCanvas, {
+    type: 'pie',
+    data: pieData,
+    options: pieOptions
+  })
+
+  var donutData1        = {
+    labels: [
+      '供能可靠性','经济效益性','环境友好性','资源节约性','智能互动性','社会效益性',
+    ],
+    datasets: [
+      {
+        data: [0.2,0.2,0.2,0.2,0.2,0.2],
+        backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+      }
+    ]
+  }
+  var pieChartCanvas = $('#pieChart2').get(0).getContext('2d')
+  var pieData        = donutData1;
+  var pieOptions     = {
+    maintainAspectRatio : false,
+    responsive : true,
+  }
+  //Create pie or douhnut chart
+  // You can switch between pie and douhnut using the method below.
+  var pieChart2 = new Chart(pieChartCanvas, {
+    type: 'pie',
+    data: pieData,
+    options: pieOptions
   })
 </script>
 </body>
