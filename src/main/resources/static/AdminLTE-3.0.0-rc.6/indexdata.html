@@ -140,7 +140,7 @@
           </li>
 
           <li class="nav-item has-treeview menu-open">
-            <a href="./indexdata.html" class="nav-link">
+            <a href="./indexdata.html" class="nav-link active">
               <i class="nav-icon far fa-circle text-red"></i>
               <p>
                 系统指标数据
@@ -171,7 +171,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./entropy.html" class="nav-link active">
+                <a href="./entropy.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>熵权法与最终权重</p>
                 </a>
@@ -210,6 +210,8 @@
     <!-- /.sidebar -->
   </aside>
 
+
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -233,40 +235,65 @@
           <div class="col-lg-12 col-12">
             <div class="card card-gray">
               <div class="card-header">
-                <h3 style="text-align: center">权重表</h3>
+                <h3 style="text-align: center">数据表</h3>
               </div>
               <table class="table table-bordered" style="text-align: center;">
                 <br>
                 <div class="form-inline">
-                  <button class="btn-primary" data-toggle="modal" data-target="#myModal">查看权重对比图</button>
+                  <button class="btn-primary" data-toggle="modal" data-target="#myModal">插入新数据</button>
                 </div>
                 <br>
                 <thead>
                 <tr>
                   <th>总目标</th>
                   <th>一级指标</th>
-                  <th>一级指标权重</th>
                   <th>二级指标</th>
-                  <th>熵权法权重</th>
-                  <th>组合权重</th>
+                  <th>一A</th>
+                  <th>一B</th>
+                  <th>一C</th>
+                  <th>二A</th>
+                  <th>二B</th>
+                  <th>二C</th>
+                  <th>三A</th>
+                  <th>三B</th>
+                  <th>三C</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                   <td rowspan="22" style="width: 10%;font-size: 60px">智慧能源系统建设水平</td>
                   <td rowspan="6" style="line-height: 200px;font-size: 30px;width: 15%">供能可靠性</td>
-                  <td rowspan="6" style="line-height: 200px;font-size: 30px;width: 10%">0.4676</td>
                   <td>电压合格率</td>
-                  <td>c</td>
-                  <td>d</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>系统平均失能频率</td>
-                  <td>2</td>
-                  <td>3</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>系统平均故障停电时间</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -274,9 +301,23 @@
                   <td>系统能量不足期望值</td>
                   <td></td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>供能质量</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -284,22 +325,49 @@
                   <td>信息网络可靠性</td>
                   <td></td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
 
                 <tr>
                   <td rowspan="5" style="line-height: 200px;font-size: 30px;width: 15%">经济效益性</td>
-                  <td rowspan="5" style="line-height: 200px;font-size: 30px;width: 10%">a</td>
                   <td>CO2权限收益</td>
                   <td>c</td>
                   <td>d</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>环境税</td>
                   <td>2</td>
                   <td>3</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>运营成本</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -307,76 +375,163 @@
                   <td>售电收入</td>
                   <td></td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>电力增长gdp</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                 </tr>
 
                 <tr>
                   <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">资源节约性</td>
-                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 10%">a</td>
                   <td>节约土地面积</td>
                   <td>c</td>
                   <td>d</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>能源转换效率</td>
                   <td>2</td>
                   <td>3</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
 
                 <tr>
                   <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">环境友好性</td>
-                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 10%">a</td>
                   <td>清洁能源减排量</td>
                   <td>c</td>
                   <td>d</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>电动汽车减排量</td>
                   <td>2</td>
                   <td>3</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
 
                 <tr>
                   <td rowspan="3" style="line-height: 100px;font-size: 30px;width: 15%">社会效益性</td>
-                  <td rowspan="3" style="line-height: 100px;font-size: 30px;width: 10%">a</td>
                   <td>新增就业机会</td>
                   <td>c</td>
                   <td>d</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>供能覆盖率</td>
                   <td>2</td>
                   <td>3</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>科研进步程度</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                 </tr>
 
                 <tr>
                   <td rowspan="4" style="line-height: 130px;font-size: 30px;width: 15%">智能互动性</td>
-                  <td rowspan="4" style="line-height: 130px;font-size: 30px;width: 10%">a</td>
                   <td>分布式能源接入率</td>
                   <td>c</td>
                   <td>d</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>智能仪表覆盖率</td>
                   <td>2</td>
                   <td>3</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>供能方案可更改率</td>
                   <td></td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>供能服务满意度</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                 </tr>
