@@ -9,7 +9,8 @@ import java.util.List;
 public class DSmerge {
 
     //评判等级
-    public static final int judgeLevel = 3;
+//    public static final int judgeLevel = 3;
+    public static final int judgeLevel = 17;
 
     //每个指标多个专家的结果融合
     //最后一行代表不确定度
@@ -86,7 +87,27 @@ public class DSmerge {
     public static void main(String[] args) {
         List<List<Integer>> lists = new ArrayList<>();
         List<Integer> one = new ArrayList<>();
-        double[][] matrix = {{0.98, 0},{0.01, 0.01},{0, 0.98},{0.01, 0.01}};
+//        double[][] matrix = {{0.98, 0},{0.01, 0.01},{0, 0.98},{0.01, 0.01}};
+        double[][] matrix = {
+                {0.1,0.1},
+                {0.7,0.6},
+                {0.1,0.2},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0,0},
+                {0.1,0.1},
+        };
         DSmerge.Merge(matrix);
 //        DSmerge.fullCombination(3, lists, one);
         System.out.println("ss");

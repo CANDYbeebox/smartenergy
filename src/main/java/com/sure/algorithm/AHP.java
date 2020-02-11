@@ -1,6 +1,7 @@
 package com.sure.algorithm;
 
 import javax.xml.transform.Source;
+import java.net.SocketTimeoutException;
 
 /**
  * Created by SURE on ${DATA}.
@@ -65,21 +66,50 @@ public class AHP {
         if (RI[N - 1] != 0) {
             CR = CI / RI[N - 1];
         }
+        System.out.println("一致性校验参数" + CR);
         if (CR >= 0.1) {
             System.out.println("一致性检验不通过");
             return new double[N];
         }
         return w;
-
     }
 
+    class fraction{
+        private int numerator;
+        private int denominator;
+        public fraction(int numerator, int denominator){
+            this.numerator=numerator;
+            this.denominator=denominator;
+        }
+        public double getRet(){
+            return (double)numerator/denominator;
+        }
+        @Override
+        public String toString(){
+            return numerator+"/"+denominator;
+        }
+    }
 
     public static void main(String[] args) {
         AHP ahp = new AHP();
-//        double[][] judgeMatrix = new double[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}};
-        double[][] judgeMatrix = new double[][]{{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
-        double[] w = ahp.weight(judgeMatrix);
-        System.out.println("111");
+        double[][] judgeMatrix = new double[][]{{1,   2,   2,   1,   1},
+                                                {1/2, 1,   1,   1/2,   1/2},
+                                                {1/2, 1,   1,   1/2,   1/2},
+                                                {1,   2,   2,   1,   1},
+                                                {1,   2,   2,   1,   1}};
+        double[][] test = new double[][]{{1,   ahp.new fraction(1,3).getRet(), ahp.new fraction(1,3).getRet()},
+                {3,   1,   1},
+                {3,   1,   1}};
+        double[][] judgeMatrix1 = new double[][]{{1,   2,   2,   2,   1},
+                                                 {ahp.new fraction(1,2).getRet(), 1,   1,   1,   ahp.new fraction(1,2).getRet()},
+                                                 {ahp.new fraction(1,2).getRet(), 1,   1,   1,   ahp.new fraction(1,2).getRet()},
+                                                 {ahp.new fraction(1,2).getRet(), 1,   1,   1,   ahp.new fraction(1,2).getRet()},
+                                                 {1,   2,   2,   2,   1}};
+        double[] w = ahp.weight(judgeMatrix1);
+
+        for (int i = 0; i < w.length; i++) {
+            System.out.print(w[i] + " ");
+        }
 
     }
 

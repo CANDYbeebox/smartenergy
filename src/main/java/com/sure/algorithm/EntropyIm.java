@@ -6,10 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by SURE on ${DATA}.
@@ -47,12 +44,11 @@ public class EntropyIm {
                 } else {
                     sum += (data.get(i).get(j) / listSum.get(i)) * Math.log(data.get(i).get(j) / listSum.get(i));
                 }
-
             }
             //计算第i项指标的熵值
             double e = -k * sum;
             entropys.add(e);
-            System.out.println(e);
+//            System.out.println(e);
             //计算第j项指标的差异系数
             double g = 1 - e;
             sumLast += g;
@@ -63,9 +59,9 @@ public class EntropyIm {
         //计算每项指标的权重
         double thygema = 0.0;
         for (double x : entropys) {
-            thygema += x;
+            thygema = thygema + 1- x;
         }
-        thygema = thygema / entropys.size();
+        thygema = thygema / entropys.size() / 10 + 0.1;
         double sumEntropy = 0;
 
         for (double x : entropys) {
@@ -78,7 +74,7 @@ public class EntropyIm {
             weights.add(weight);
             sum += weight;
         }
-        System.out.println("权重之和" + sum);
+//        System.out.println("权重之和" + sum);
         return weights;
     }
 
@@ -87,41 +83,79 @@ public class EntropyIm {
         nf.setMaximumFractionDigits(3);
         // 如果不需要四舍五入，可以使用RoundingMode.DOWN
         nf.setRoundingMode(RoundingMode.UP);
-         return nf.format(d);
+        return nf.format(d);
     }
 
-
-    public static void main(String[] args) {
+    public static void helper(int start, int end) {
         List<List<Double>> matrix = new ArrayList<>();
         Scanner sc;
-        try (BufferedReader br = new BufferedReader(new FileReader("originData.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {
             String tmp = null;
-            for (int j = 0; j < 11; j++) {
+            for (int j = 0; j < end; j++) {
                 tmp = br.readLine();
                 sc = new Scanner(tmp);
-                if (j >= 6) {
+                if (j >= start) {
                     List<Double> one = new ArrayList<>();
                     for (int i = 0; i < 9; i++) {
                         one.add(sc.nextDouble());
                     }
                     matrix.add(one);
                 }
-
             }
-//            while ((tmp = br.readLine()) != null) {
-//                sc = new Scanner(tmp);
-//                List<Double> one = new ArrayList<>();
-//                for (int i = 0; i < 9; i++) {
-//                    one.add(sc.nextDouble());
-//                }
-//                matrix.add(one);
-//            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("sss");
+        List<Double> ret = EntropyIm.getWeight(matrix);
+        for (int i = 0; i < ret.size(); i++) {
+            System.out.println(String.format("%.4f", ret.get(i)));
+        }
+    }
+
+
+    public static void main(String[] args) {
+        EntropyIm.helper(0, 6);
+        EntropyIm.helper(6, 10);
+        EntropyIm.helper(10, 16);
+        EntropyIm.helper(16, 22);
+        EntropyIm.helper(22, 26);
+//        List<List<Double>> matrix = new ArrayList<>();
+//        Scanner sc;
+//        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {
+//            String tmp = null;
+//            for (int j = 0; j < 26; j++) {
+//                tmp = br.readLine();
+//                sc = new Scanner(tmp);
+//                if (j >= 22) {
+//                    List<Double> one = new ArrayList<>();
+//                    for (int i = 0; i < 9; i++) {
+//                        one.add(sc.nextDouble());
+//                    }
+//                    matrix.add(one);
+//                }
+//            }
+////            while ((tmp = br.readLine()) != null) {
+////                sc = new Scanner(tmp);
+////                List<Double> one = new ArrayList<>();
+////                for (int i = 0; i < 9; i++) {
+////                    one.add(sc.nextDouble());
+////                }
+////                matrix.add(one);
+////            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("sss");
+//
+//        List<Double> ret = EntropyIm.getWeight(matrix);
+//        System.out.println(ret);
+//        for (int i = 0; i < ret.size(); i++) {
+//            System.out.println(String.format("%.4f", ret.get(i)));
+//        }
+
 
         /*论文四个
         List<Double> first = new ArrayList<>();
@@ -476,12 +510,7 @@ public class EntropyIm {
 
 */
 
-        System.out.println(EntropyImproved.getWeight(matrix));
-        List<Double> ret = EntropyIm.getWeight(matrix);
-        System.out.println(ret);
-        for (int i = 0; i < ret.size(); i++) {
-            System.out.println(String.format("%.4f", ret.get(i)));;
-        }
+//        System.out.println(EntropyImproved.getWeight(matrix));
 
     }
 

@@ -29,14 +29,14 @@ public class Deviation {
             List<Double> weights = weightsOfIndex.get(i);
             List<Topsis.Alternative> al = als.get(i);
             Topsis topsis = new Topsis(indexCnts.get(i), weights);
-            topsis.scoreAndsort(al, topsis.indexCnt);
+            topsis.score(al, topsis.indexCnt);
             for (int j = 0; j < regionCnt; j++) {
                 scoresOfTarget[i][j] = al.get(j).c;
             }
         }
         //计算总体得分，选择最优者
         Topsis topsis = new Topsis(indexCnts.get(indexCnts.size() - 1), weightsOfIndex.get(indexCnts.size() - 1));
-        List<Topsis.Alternative> totalScores = topsis.scoreAndsort(als.get(als.size() - 1), topsis.indexCnt);
+        List<Topsis.Alternative> totalScores = topsis.score(als.get(als.size() - 1), topsis.indexCnt);
         double mostScore = 0;
         for (int i = 0; i < totalScores.size(); i++) {
             if (totalScores.get(i).c > mostScore) {
@@ -69,7 +69,7 @@ public class Deviation {
      * @param
      * @param data
      */
-    public double[] analyzeIndex(double[][] contributionRate, int regionIdx, List<List<Double>> data, int[][] dataLocation, List<List<Double>> weightsOfIndex) {
+    public double[] analyzeIndex(double[][] contributionRate, int regionIdx, List<List<Double>> data, int[][] dataLocation, List<List<Double>> weightsOfIndex, int year) {
         //1.数据归一化
         dataNormalization(data);
         //2.找到偏差贡献率最大的属性
@@ -89,7 +89,7 @@ public class Deviation {
         double indexContributeSum = 0;
         for (int i = start; i < end; i++) {
             List<Double> curIndexData = data.get(i);
-            indexContribute[i - start] = currentWeight.get(i - start) * (curIndexData.get(bestRegionIdx) - curIndexData.get(regionIdx)) / (curIndexData.get(bestRegionIdx) + 0.1);
+            indexContribute[i - start] = currentWeight.get(i - start) * (curIndexData.get(bestRegionIdx * 3 + year) - curIndexData.get(regionIdx * 3 + year)) / (curIndexData.get(bestRegionIdx* 3 + year) + 0.1);
             indexContributeSum += indexContribute[i - start];
         }
         //4.计算指标贡献偏差
@@ -99,7 +99,6 @@ public class Deviation {
         }
 
         return indexContributeRate;
-
     }
 
 
@@ -119,7 +118,7 @@ public class Deviation {
 
     public static void main(String[] args) {
         List<List<Double>> matrix = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("originData.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("deviationData.txt"))) {
             String tmp = null;
             for (int j = 0; j < 22; j++) {
                 tmp = br.readLine();
@@ -259,12 +258,13 @@ public class Deviation {
         weigtsss.add(weigt.subList(18, 22));
         weigtsss.add(weigt);
 
+
         List<Double> weightsOfTarget = Arrays.asList(0.15, 0.15, 0.10, 0.10, 0.25, 0.25);
 
         double[][] contributionRate = deviation.computeDevaition(Arrays.asList(6, 5, 2, 2, 3, 4, 22), als, weigtsss, weightsOfTarget);
 
         int[][] dataLocation = {{0, 6}, {6, 11}, {11, 13}, {13, 15}, {15, 18}, {18, 22}};
-        deviation.analyzeIndex(contributionRate, 0, matrix, dataLocation, weigtsss);
+        deviation.analyzeIndex(contributionRate, 0, matrix, dataLocation, weigtsss, 2);
 
 
     }

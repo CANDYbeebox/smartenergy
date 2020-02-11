@@ -49,37 +49,42 @@ public class Topsis {
         }
     }
 
-    public List<Alternative> scoreAndsort(List<Alternative> al, int indexCnt) {
+    public List<Alternative> score(List<Alternative> al, int indexCnt) {
         double x[] = new double[indexCnt], y[] = new double[indexCnt];
         for (int i = 0; i < indexCnt; i++) {
             x[i] = 0;
-            y[i] = 0;
+            y[i] = Double.MAX_VALUE;
         }
         for (Alternative a : al) {
             for (int i = 0; i < indexCnt; i++) {
-                x[i] += Math.pow(a.attribute[i], 2);
+//                x[i] += Math.pow(a.attribute[i], 2);
+                x[i] = Math.max(a.attribute[i], x[i]);
+                y[i] = Math.min(a.attribute[i], y[i]);
             }
         }
-        for (int i = 0; i < indexCnt; i++) {
-            x[i] = Math.sqrt(x[i]);
-        }
+//        for (int i = 0; i < indexCnt; i++) {
+//            x[i] = Math.sqrt(x[i]);
+//        }
         for (Alternative a : al) {
             for (int i = 0; i < indexCnt; i++) {
-                a.attribute[i] = a.attribute[i] / x[i];
+                a.attribute[i] = (a.attribute[i] - y[i]) / (x[i] - y[i]);
             }
             a.weighted();
         }
         //计算正负理想解
-        for (int i = 0; i < indexCnt; i++) {
-            for (Alternative a : al) {
-                a.comp = i;
-            }
-            x[i] = Collections.max(al).attribute[i];
-            y[i] = Collections.min(al).attribute[i];
+        double[] worsts = new double[indexCnt];
+        for (int i = 0; i < worsts.length; i++) {
+            worsts[i] = Double.MAX_VALUE;
         }
-
-        Alternative best = new Alternative("", x);
-        Alternative worse = new Alternative("", y);
+        double[] bests = new double[indexCnt];
+        for (int i = 0; i < indexCnt; i++) {
+            for (int j = 0; j < al.size(); j++) {
+                worsts[i] = Math.min(worsts[i], al.get(j).attribute[i]);
+                bests[i] = Math.max(bests[i], al.get(j).attribute[i]);
+            }
+        }
+        Alternative best = new Alternative("", bests);
+        Alternative worse = new Alternative("", worsts);
         //计算正负理想解的距离、贴进度
         ListIterator<Alternative> it = al.listIterator();
         while (it.hasNext()) {
@@ -108,58 +113,20 @@ public class Topsis {
 //            }
 //        });
         for (Alternative a : al) {
-            System.out.println(a.name + " " + a.c);
+//            System.out.println(a.name + " " + a.c);
+            System.out.println(String.format("%.4f", a.c));
+
         }
+        System.out.println("-----");
+
         return al;
     }
 
-    public static void main(String[] args) {
+    public void helper(int start, int end, Double[] weights) {
         List<Alternative> al = new LinkedList<Alternative>();
-        Double[] weights = {24.81,
-                25.515,
-                24.93,
-                26.655,
-                24.15,
-                23.94,
-                29.7,
-                29.835,
-                31.185,
-                30.645,
-                28.635,
-                48.64,
-                51.36,
-                50.17,
-                49.83,
-                82.7,
-                83.75,
-                83.55,
-                61.65,
-                64.325,
-                60.725,
-                63.3,
-        };    //各指标权重
-        List<Double> weightsList = Arrays.asList(weights);
-        Topsis topsis = new Topsis(22, weightsList);
-        //从文件录入数据
-        /*
-        try (BufferedReader br = new BufferedReader(new FileReader("1.txt"))) {
-            String tmp = null;
-            while ((tmp = br.readLine()) != null) {
-                s = new Scanner(tmp);
-                double[] data = new double[D];
-                String num = s.next();
-                for (int i = 0; i < D; i++) {
-                    data[i] = s.nextDouble();
-                }
-                al.add(new Alternative(num, data));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
 
+        List<Double> weightsList = Arrays.asList(weights);
+        Topsis topsis = new Topsis(end - start, weightsList);
         double[] A1 = new double[topsis.indexCnt];
         double[] A2 = new double[topsis.indexCnt];
         double[] A3 = new double[topsis.indexCnt];
@@ -169,37 +136,148 @@ public class Topsis {
         double[] C1 = new double[topsis.indexCnt];
         double[] C2 = new double[topsis.indexCnt];
         double[] C3 = new double[topsis.indexCnt];
-        try (BufferedReader br = new BufferedReader(new FileReader("originData.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {
             String tmp = null;
-            for (int i = 0; i < 22; i++) {
+            int idx = 0;
+            for (int j = 0; j < end; j++) {
                 tmp = br.readLine();
                 s = new Scanner(tmp);
-                A1[i] = s.nextDouble();
-                A2[i] = s.nextDouble();
-                A3[i] = s.nextDouble();
-                B1[i] = s.nextDouble();
-                B2[i] = s.nextDouble();
-                B3[i] = s.nextDouble();
-                C1[i] = s.nextDouble();
-                C2[i] = s.nextDouble();
-                C3[i] = s.nextDouble();
+                if (j >= start) {
+                    s = new Scanner(tmp);
+                    A1[idx] = s.nextDouble();
+                    A2[idx] = s.nextDouble();
+                    A3[idx] = s.nextDouble();
+                    B1[idx] = s.nextDouble();
+                    B2[idx] = s.nextDouble();
+                    B3[idx] = s.nextDouble();
+                    C1[idx] = s.nextDouble();
+                    C2[idx] = s.nextDouble();
+                    C3[idx] = s.nextDouble();
+                    idx++;
+                }
             }
-//            al.add(new Alternative("A1", A1));
-//            al.add(new Alternative("A2", A2));
+            al.add(topsis.new Alternative("A1", A1));
+            al.add(topsis.new Alternative("A2", A2));
             al.add(topsis.new Alternative("A3", A3));
-//            al.add(new Alternative("B1", B1));
-//            al.add(new Alternative("B2", B2));
+            al.add(topsis.new Alternative("B1", B1));
+            al.add(topsis.new Alternative("B2", B2));
             al.add(topsis.new Alternative("B3", B3));
-//            al.add(new Alternative("C1", C1));
-//            al.add(new Alternative("C2", C2));
+            al.add(topsis.new Alternative("C1", C1));
+            al.add(topsis.new Alternative("C2", C2));
             al.add(topsis.new Alternative("C3", C3));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        topsis.score(al, topsis.indexCnt);
 
-        topsis.scoreAndsort(al, topsis.indexCnt);
+    }
 
+    public static void main(String[] args) {
+
+        Double[] weights1 = {0.1383,
+                0.1377,
+                0.2383,
+                0.1402,
+                0.2046,
+                0.1409,
+
+
+        };
+        Double[] weights2 = {0.2569,
+                0.2413,
+                0.2186,
+                0.2832,
+
+
+        };
+        Double[] weights3 = {0.1541,
+                0.1594,
+                0.1972,
+                0.1671,
+                0.1705,
+                0.1517,
+
+
+        };
+        Double[] weights4 = {0.1618,
+                0.1336,
+                0.1937,
+                0.1398,
+                0.1446,
+                0.2264,
+        };
+        Double[] weights5 = {0.2350,
+                0.2931,
+                0.2246,
+                0.2473,
+
+        };
+        Topsis topsis = new Topsis(0, new ArrayList<>());
+        topsis.helper(0, 6, weights1);
+        topsis.helper(6, 10, weights2);
+        topsis.helper(10, 16, weights3);
+        topsis.helper(16, 22, weights4);
+        topsis.helper(22, 26, weights5);
+
+
+
+        /*
+        List<Alternative> al = new LinkedList<Alternative>();
+
+        Double[] weights = {0.2255,
+                0.3150,
+                0.2177,
+                0.2418,
+        };    //各指标权重
+        List<Double> weightsList = Arrays.asList(weights);
+        Topsis topsis = new Topsis(4, weightsList);
+        double[] A1 = new double[topsis.indexCnt];
+        double[] A2 = new double[topsis.indexCnt];
+        double[] A3 = new double[topsis.indexCnt];
+        double[] B1 = new double[topsis.indexCnt];
+        double[] B2 = new double[topsis.indexCnt];
+        double[] B3 = new double[topsis.indexCnt];
+        double[] C1 = new double[topsis.indexCnt];
+        double[] C2 = new double[topsis.indexCnt];
+        double[] C3 = new double[topsis.indexCnt];
+        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {
+            String tmp = null;
+            int idx = 0;
+            for (int j = 0; j < 26; j++) {
+                tmp = br.readLine();
+                s = new Scanner(tmp);
+                if (j >= 22) {
+                        s = new Scanner(tmp);
+                        A1[idx] = s.nextDouble();
+                        A2[idx] = s.nextDouble();
+                        A3[idx] = s.nextDouble();
+                        B1[idx] = s.nextDouble();
+                        B2[idx] = s.nextDouble();
+                        B3[idx] = s.nextDouble();
+                        C1[idx] = s.nextDouble();
+                        C2[idx] = s.nextDouble();
+                        C3[idx] = s.nextDouble();
+                        idx++;
+                }
+            }
+            al.add(topsis.new Alternative("A1", A1));
+            al.add(topsis.new Alternative("A2", A2));
+            al.add(topsis.new Alternative("A3", A3));
+            al.add(topsis.new Alternative("B1", B1));
+            al.add(topsis.new Alternative("B2", B2));
+            al.add(topsis.new Alternative("B3", B3));
+            al.add(topsis.new Alternative("C1", C1));
+            al.add(topsis.new Alternative("C2", C2));
+            al.add(topsis.new Alternative("C3", C3));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        topsis.score(al, topsis.indexCnt);
+
+*/
     }
 }
