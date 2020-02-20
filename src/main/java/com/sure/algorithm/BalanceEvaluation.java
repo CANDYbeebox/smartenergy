@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class BalanceEvaluation {
 
     public double[] computeBalanceNumber(List<List<Double>> data) {
-        //m个评价对象，n个指标
+        //m个评价对象，k个指标
         int k = data.size();
         int m = data.get(0).size();
         //原始数据归一化
@@ -36,7 +36,7 @@ public class BalanceEvaluation {
             for (int j = 0; j < k; j++) {
                 sum += Math.pow(data.get(j).get(i) - averages[i], 2);
             }
-            standardDeviations[i] = Math.sqrt(sum);
+            standardDeviations[i] = Math.sqrt(sum / k);
         }
         //计算各个评价对象的指标平衡系数系数
         double[] balanceNumbers = new double[m];
@@ -45,7 +45,7 @@ public class BalanceEvaluation {
             sumStandardDeviation += standardDeviation;
         }
         for (int i = 0; i < m; i++) {
-            balanceNumbers[i] = 1 - standardDeviations[i] / (sumStandardDeviation / m * k);
+            balanceNumbers[i] = 1 - standardDeviations[i] / (5 * sumStandardDeviation / m);
         }
         return balanceNumbers;
 

@@ -51,7 +51,7 @@ public class AHP {
         for (int i = 0; i < N; i++) {
             w[i] = sumRowOfQ[i] / sum;
         }
-        //4.求最大特征向量
+        //4.求最大特征值
         for (int i = 0; i < N; i++) {
             double t = 0.0;
             for (int j = 0; j < N; j++) {
@@ -63,6 +63,7 @@ public class AHP {
         System.out.println("lamdba:" + lamdba);
         //5.一致性检验
         double CI = (lamdba - N) / (N - 1);
+        System.out.println("CI=" + CI);
         if (RI[N - 1] != 0) {
             CR = CI / RI[N - 1];
         }
@@ -100,11 +101,15 @@ public class AHP {
         double[][] test = new double[][]{{1,   ahp.new fraction(1,3).getRet(), ahp.new fraction(1,3).getRet()},
                 {3,   1,   1},
                 {3,   1,   1}};
-        double[][] judgeMatrix1 = new double[][]{{1,   2,   2,   2,   1},
-                                                 {ahp.new fraction(1,2).getRet(), 1,   1,   1,   ahp.new fraction(1,2).getRet()},
-                                                 {ahp.new fraction(1,2).getRet(), 1,   1,   1,   ahp.new fraction(1,2).getRet()},
-                                                 {ahp.new fraction(1,2).getRet(), 1,   1,   1,   ahp.new fraction(1,2).getRet()},
-                                                 {1,   2,   2,   2,   1}};
+        double erfenzhiyi = ahp.new fraction(1, 2).getRet();
+        double sanfenzhiuyi = ahp.new fraction(1, 3).getRet();
+        double[][] judgeMatrix1 = new double[][]{{1, 2, 1, 3, 2},
+                {erfenzhiyi, 1, erfenzhiyi, 2, 1},
+                {1, 2, 1, 3, 2},
+                {sanfenzhiuyi, erfenzhiyi, sanfenzhiuyi, 1, 1},
+                {erfenzhiyi, 1, erfenzhiyi, 1, 1},
+        };
+
         double[] w = ahp.weight(judgeMatrix1);
 
         for (int i = 0; i < w.length; i++) {
