@@ -4,6 +4,7 @@ import javax.xml.transform.Source;
 import java.net.SocketTimeoutException;
 
 /**
+ * 采用
  * Created by SURE on ${DATA}.
  */
 public class AHP {
@@ -16,7 +17,6 @@ public class AHP {
 
     // 最大特征值
     private double lamdba = 0.0;
-
 
     public double[] weight(double[][] judgeMatrix) {
         int N = judgeMatrix.length;

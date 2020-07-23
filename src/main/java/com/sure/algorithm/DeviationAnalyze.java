@@ -8,6 +8,7 @@ import java.util.*;
 import java.util.function.DoubleToLongFunction;
 
 /**
+ * 采用
  * Created by SURE on ${DATA}.
  */
 public class DeviationAnalyze {
@@ -45,19 +46,21 @@ public class DeviationAnalyze {
         for (int i = 0; i < targetCnt; i++) {
             for (int j = 0; j < regionCnt; j++) {
                 deviationRateMatrix[i][j] = (scoresOfTarget[i][bestRegionIdx] - scoresOfTarget[i][j]) / sumOfTarget[i] * weightsOfTarget.get(i);
+//                System.out.println(deviationRateMatrix[i][j]);
                 sumOfColumn[j] += deviationRateMatrix[i][j];
             }
+//            System.out.println("---");
         }
         //3.计算评价对象各属性偏差贡献率
         double[][] contributionRate = new double[targetCnt][regionCnt];
         for (int i = 0; i < targetCnt; i++) {
             for (int j = 0; j < regionCnt; j++) {
-                System.out.println(deviationRateMatrix[i][j]);
                 contributionRate[i][j] = deviationRateMatrix[i][j] / sumOfColumn[j];
+//                System.out.println(contributionRate[i][j] );
             }
-            System.out.println("sss");
+//            System.out.println("---");
         }
-        return contributionRate;
+        return deviationRateMatrix;
     }
 
     /**
@@ -127,65 +130,45 @@ public class DeviationAnalyze {
         double[][] scoresOfTarget = new double[deviation.targetCnt][deviation.regionCnt];
 
 
-//        /*
+        /*
         double[][] zhuanzhijuzhen = {
-                {0.6018, 	0.5236, 	0.6639, 	0.5853, 	0.4856 },
-                {0.3784, 	0.0147, 	0.4828, 	0.0604, 	0.2015},
-                {0.0335, 	0.3167, 	0.0793, 	0.3362, 	0.1157}
+                {0.0638,	0.0863, 0.4203,	0.5288,	0.5967 },
+                {0.1427,	0.1282,	0.0761,	0.1398,	0.1821},
+                {0.5041,	0.2507,	0.1471,	0.1154,	0.0623}
         };
 //*/
 
 
-        /*
-        double[][] zhuanzhijuzhen = {
-                {0.7515, 	0.8210, 	0.8043, 	0.7227,	0.6475},
-                {0.5783, 	0.1314, 	0.6408, 	0.4001,	0.3196},
-                {0.4449, 	0.5142, 	0.2817, 	0.4296,	0.1998}
-        };
-//        */
+
 
 /*
         double[][] zhuanzhijuzhen = {
-                {0.9457, 0.9853, 0.8793, 0.9089, 1.0000},
-                {0.8879, 0.7199, 0.8191, 0.7538, 0.3532},
-                {0.6279, 0.7226, 0.6552, 0.5136, 0.7926},
-        };
+                {0.3552,	0.3482,	0.7884,	0.8124,	0.8737},
+                {0.5409,	0.4386,	0.4508,	0.4529,	0.5113},
+                {0.6995,	0.4180,	0.5682,	0.2914,	0.1871}
 
- */
+                };
+//        */
+
+
+
+///*
+        double[][] zhuanzhijuzhen = {
+                {0.7200,	0.7711,	0.9561,	0.8838,	1.0000},
+                {0.9211,	0.7421,	0.9263,	0.8619,	0.6344},
+                {0.9579,	0.9571,	0.7152,	0.7349,	0.7614},
+        };
+//        */
+
+
         for (int i = 0; i < scoresOfTarget.length; i++) {
             for (int j = 0; j < scoresOfTarget[0].length; j++) {
                 scoresOfTarget[i][j] = zhuanzhijuzhen[j][i];
             }
         }
 
-        /*
-        //1
-        scoresOfTarget[0] = new double[]{0.5970, 0.3808, 0.0330};
-        scoresOfTarget[1] = new double[]{0.4918, 0.0141, 0.3003};
-        scoresOfTarget[2] = new double[]{0.6842, 0.3457, 0.0906};
-        scoresOfTarget[3] = new double[]{0.5853, 0.0745, 0.3362};
-        scoresOfTarget[4] = new double[]{0.4753, 0.1940, 0.1190};
-        */
 
 
-
-        /*
-        //2
-        scoresOfTarget[0] = new double[]{0.7474, 0.5758, 0.4457};
-        scoresOfTarget[1] = new double[]{0.8066, 0.0964, 0.4893};
-        scoresOfTarget[2] = new double[]{0.8080, 0.6267, 0.4632};
-        scoresOfTarget[3] = new double[]{0.7227, 0.3937, 0.4296};
-        scoresOfTarget[4] = new double[]{0.6456, 0.5043, 0.1981};
-*/
-
-        /*
-        //3
-        scoresOfTarget[0] = new double[]{0.9288, 0.6975, 0.7589};
-        scoresOfTarget[1] = new double[]{0.9859, 0.6835, 0.6991};
-        scoresOfTarget[2] = new double[]{0.8707, 0.6863, 0.7836};
-        scoresOfTarget[3] = new double[]{0.9089, 0.7538, 0.5136};
-        scoresOfTarget[4] = new double[]{1.0000, 0.5329, 0.2839};
-*/
         //属性权重
         List<Double> weightsOfTarget = Arrays.asList(0.2987, 0.1593, 0.2987, 0.1040, 0.1393);
 
@@ -193,7 +176,8 @@ public class DeviationAnalyze {
 
 
         List<List<Double>> matrix = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {
+//        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("indexCooidinate.txt"))) {
             String tmp = null;
             for (int j = 0; j < 26; j++) {
                 tmp = br.readLine();
@@ -216,38 +200,50 @@ public class DeviationAnalyze {
 
         //各个属性下的指标权重
         List<List<Double>> weigtsss = new ArrayList<>();
-        weigtsss.add(Arrays.asList(0.1383,
-                0.1377,
-                0.2383,
-                0.1402,
-                0.2046,
-                0.1409
+        weigtsss.add(Arrays.asList(0.1721,
+        0.1695,
+        0.1672,
+        0.1721,
+        0.1712,
+        0.1480
         ));
-        weigtsss.add(Arrays.asList(0.2569,
-                0.2413,
-                0.2186,
-                0.2832
+        weigtsss.add(Arrays.asList(0.2538,
+        0.2368,
+        0.2853,
+        0.2242
+
         ));
-        weigtsss.add(Arrays.asList(0.1541,
-                0.1594,
-                0.1972,
-                0.1671,
-                0.1705,
-                0.1517
+        weigtsss.add(Arrays.asList(0.1929,
+        0.1942,
+        0.1555,
+        0.1575,
+        0.1598,
+        0.1402
+
         ));
-        weigtsss.add(Arrays.asList(0.1618,
-                0.1336,
-                0.1937,
-                0.1398,
-                0.1446,
-                0.2264
+        weigtsss.add(Arrays.asList(0.1711,
+        0.1884,
+        0.1549,
+        0.1621,
+        0.1522,
+        0.1713
+
         ));
-        weigtsss.add(Arrays.asList(0.2350,
-                0.2931,
-                0.2246,
-                0.2473
+        weigtsss.add(Arrays.asList(0.2516,
+        0.2676,
+        0.2361,
+        0.2446
+
         ));
 
+//        deviation.analyzeIndex(contributionRate, 1, matrix, dataLocation, weigtsss, 0, 3);
+//        System.out.println("------");
+//        deviation.analyzeIndex(contributionRate, 2, matrix, dataLocation, weigtsss, 0, 3);
+//        deviation.analyzeIndex(contributionRate, 1, matrix, dataLocation, weigtsss, 1, 3);
+//        System.out.println("----");
+//        deviation.analyzeIndex(contributionRate, 2, matrix, dataLocation, weigtsss, 1, 3);
+        deviation.analyzeIndex(contributionRate, 1, matrix, dataLocation, weigtsss, 2, 3);
+        System.out.println("---");
         deviation.analyzeIndex(contributionRate, 2, matrix, dataLocation, weigtsss, 2, 3);
 
 

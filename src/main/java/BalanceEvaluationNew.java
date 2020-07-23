@@ -1,5 +1,3 @@
-package com.sure.algorithm;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,10 +8,9 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * 属性平衡性因子计算
  * Created by SURE on ${DATA}.
  */
-public class BalanceEvaluation {
+public class BalanceEvaluationNew {
 
     public double[] computeBalanceNumber(List<List<Double>> data) {
         //m个评价对象，k个属性
@@ -31,7 +28,6 @@ public class BalanceEvaluation {
             averages[i] = sum / k;
         }
         //计算标准差
-        double max = 0;
         double[] standardDeviations = new double[m];
         for (int i = 0; i < m; i++) {
             double sum = 0.0;
@@ -39,17 +35,17 @@ public class BalanceEvaluation {
                 sum += Math.pow(data.get(j).get(i) - averages[i], 2);
             }
             standardDeviations[i] = Math.sqrt(sum / k);
-            max = Math.max(standardDeviations[i], max);
+            System.out.println(standardDeviations[i]);
         }
         //计算各个评价对象的指标平衡系数系数
         double[] balanceNumbers = new double[m];
-        for (int i = 0; i < m; i++) {
-            balanceNumbers[i] = Math.exp(-(standardDeviations[i]/max)*(standardDeviations[i]/max)/2);
-//            System.out.println(balanceNumbers[i]);
+        double sumStandardDeviation = 0.0;
+        for (double standardDeviation : standardDeviations) {
+            sumStandardDeviation += standardDeviation;
         }
-
-
-
+        for (int i = 0; i < m; i++) {
+            balanceNumbers[i] = 1 - standardDeviations[i] / (5 * sumStandardDeviation / m);
+        }
         return balanceNumbers;
 
     }
@@ -66,7 +62,6 @@ public class BalanceEvaluation {
     }
 
     public static void main(String[] args) {
-        double mm = Math.exp(-1.0/2);
         List<List<Double>> data = new ArrayList<>();
         List<List<Double>> matrix = new ArrayList<>();
         Scanner sc;
@@ -86,7 +81,7 @@ public class BalanceEvaluation {
             e.printStackTrace();
         }
         System.out.println("sss");
-        BalanceEvaluation balanceEvaluation = new BalanceEvaluation();
+        BalanceEvaluationNew balanceEvaluation = new BalanceEvaluationNew();
         double[] ret = balanceEvaluation.computeBalanceNumber(matrix);
         for (int i = 0; i < ret.length; i++) {
             System.out.println(ret[i]);

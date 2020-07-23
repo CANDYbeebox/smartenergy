@@ -124,6 +124,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="./registercheck.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>注册审核</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
                 <a href="./usermanage.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>角色管理</p>
@@ -143,7 +150,7 @@
             <a href="./indexdata.html" class="nav-link">
               <i class="nav-icon far fa-circle text-red"></i>
               <p>
-                系统指标数据
+                评价对象数据管理
               </p>
             </a>
           </li>
@@ -167,13 +174,13 @@
               <li class="nav-item">
                 <a href="./d-smerge.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DS融合层次分析法</p>
+                  <p>DS&AHP主观权重</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./entropy.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>熵权法与最终权重</p>
+                  <p>熵权法客观权重</p>
                 </a>
               </li>
             </ul>
@@ -184,7 +191,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-blue"></i>
               <p>
-                系统评价
+                评价分析
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -217,7 +224,6 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <button class="btn-primary btn-lg">添加角色</button>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -234,56 +240,97 @@
           <div class="col-lg-12 col-12">
             <div class="card">
               <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table" style="font-size: large">
+              <div class="card-body">
+                <table class="table table-striped" style="text-align: center">
                   <thead>
                   <tr>
                     <th>用户名</th>
+                    <th>姓名</th>
                     <th>角色</th>
-                    <th>拥有权限</th>
                     <th></th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
+                    <td>zhangsan</td>
                     <td>张三</td>
-                    <td>管理员
-                      <button class="btn btn-primary">修改</button>
-                    </td>
-                    <td>
-                      <p>查看指标信息</p>
-                      <p>查看评分</p>
-                      <p>修改指标</p>
-                      <p>修改角色与权限</p>
-                      <p>输入判断矩阵</p>
+                    <td>管理员</td>
+                    <td><button class="btn-primary">修改角色</button>
+                    <button class="btn-secondary">提交</button>
                     </td>
                   </tr>
                   <tr>
+                    <td>lisi</td>
                     <td>李四</td>
-                    <td>专家
-                      <button class="btn btn-primary">修改</button>
-                    </td>
-                    <td>
-                      <p>查看指标信息</p>
-                      <p>查看评分</p>
-                      <p>提交专家调查表</p>
+                    <td>专家</td>
+                    <td><button class="btn-primary">修改角色</button>
+                      <button class="btn-secondary">提交</button>
                     </td>
                   </tr>
                   <tr>
+                    <td>wangwu</td>
                     <td>王五</td>
-                    <td>普通用户
-                      <button class="btn btn-primary">修改</button>
-                    </td>
-                    <td>
-                      <p>查看指标信息</p>
-                      <p>查看评分</p>
+                    <td>普通用户</td>
+                    <td><button class="btn-primary">修改角色</button>
+                      <button class="btn-secondary">提交</button>
                     </td>
                   </tr>
+                  <tr>
+                    <td>test4</td>
+                    <td>钱某某</td>
+                    <td>专家</td>
+                    <td><button class="btn-primary">修改角色</button>
+                      <button class="btn-secondary">提交</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>test5</td>
+                    <td>孙某某</td>
+                    <!--<td align="center">-->
+                      <!--<select class="form-control" style="width: 30%">-->
+                      <!--<option>管理员</option>-->
+                      <!--<option>专家</option>-->
+                      <!--<option>普通用户</option>-->
+                    <!--</select>-->
+                    <!--</td>-->
+                    <td>专家</td>
+                    <td><button class="btn-primary">修改角色</button>
+                      <button class="btn-secondary">提交</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>test7</td>
+                    <td>杨某某</td>
+                    <td>普通用户</td>
+                    <td><button class="btn-primary">修改角色</button>
+                      <button class="btn-secondary">提交</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>test9</td>
+                    <td>葛某某</td>
+                    <td>专家</td>
+                    <td><button class="btn-primary">修改角色</button>
+                      <button class="btn-secondary">提交</button>
+                    </td>
+                  </tr>
+
                   </tbody>
                 </table>
               </div>
               <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                  <li class="page-item"><a class="page-link" href="#">«</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
+              </div>
             </div>
+
 
 
           </div>

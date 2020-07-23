@@ -9,6 +9,7 @@ import java.text.NumberFormat;
 import java.util.*;
 
 /**
+ * 改进的熵权法
  * Created by SURE on ${DATA}.
  */
 public class EntropyIm {
@@ -30,10 +31,13 @@ public class EntropyIm {
                 double temp = (data.get(i).get(j) - min) / (max - min);
                 sum += temp;
                 data.get(i).set(j, temp);
+                System.out.println(String.format("%.4f", temp));
             }
+            System.out.println("---");
             listSum.add(sum);
         }
 
+//        EntropyIm.judgeSame(data);
 
         //计算每项指标下每个记录所占比重
         for (int i = 0; i < data.size(); i++) {
@@ -89,7 +93,7 @@ public class EntropyIm {
     public static void helper(int start, int end) {
         List<List<Double>> matrix = new ArrayList<>();
         Scanner sc;
-        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("indexCooidinate.txt"))) {
             String tmp = null;
             for (int j = 0; j < end; j++) {
                 tmp = br.readLine();
@@ -113,13 +117,48 @@ public class EntropyIm {
         }
     }
 
+    public static void judgeSame(List<List<Double>> data) {
+        List<List<String>> lists = new ArrayList<>();
+        for (int i = 0; i < data.size(); i++) {
+            List<String> one = new ArrayList<>();
+            lists.add(one);
+            for (int j = 0; j < data.get(0).size(); j++) {
+                one.add(        String.format("%.4f", data.get(i).get(j)));
+            }
+        }
+        HashSet<String> hashSet = new HashSet<>();
+
+        for (int i = 0; i < lists.size(); i++) {
+            for (int j = 0; j < lists.get(i).size(); j++) {
+                String biaozhun = lists.get(i).get(j);
+                for (int k = i + 1; k < lists.size(); k++) {
+                    for (int l = 0; l < lists.get(k).size(); l++) {
+                        if (biaozhun.equals(lists.get(k).get(l))) {
+                            hashSet.add(biaozhun);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     public static void main(String[] args) {
+        EntropyIm.helper(0, 26);
+        System.out.println("----");
+//
+
+        /*
         EntropyIm.helper(0, 6);
+        System.out.println("----");
         EntropyIm.helper(6, 10);
+        System.out.println("----");
         EntropyIm.helper(10, 16);
+        System.out.println("----");
         EntropyIm.helper(16, 22);
+        System.out.println("----");
         EntropyIm.helper(22, 26);
+        System.out.println("----");
+//        */
 //        List<List<Double>> matrix = new ArrayList<>();
 //        Scanner sc;
 //        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {

@@ -124,6 +124,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="./registercheck.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>注册审核</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./usermanage.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>角色管理</p>
@@ -143,7 +149,7 @@
             <a href="./indexdata.html" class="nav-link active">
               <i class="nav-icon far fa-circle text-red"></i>
               <p>
-                系统指标数据
+                评价对象数据管理
               </p>
             </a>
           </li>
@@ -167,13 +173,13 @@
               <li class="nav-item">
                 <a href="./d-smerge.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DS融合层次分析法</p>
+                  <p>DS&AHP主观权重</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./entropy.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>熵权法与最终权重</p>
+                  <p>熵权法客观权重</p>
                 </a>
               </li>
             </ul>
@@ -184,7 +190,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-blue"></i>
               <p>
-                系统评价
+                评价分析
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -241,299 +247,365 @@
                 <br>
                 <div class="form-inline">
                   <button class="btn-primary" data-toggle="modal" data-target="#myModal">插入新数据</button>
+                  &nbsp;
+                  &nbsp;
+                  &nbsp;
+                  <button class="btn-warning" data-toggle="modal" data-target="#修改">修改数据</button>
+                  &nbsp;
+                  &nbsp;
+                  &nbsp;
+                  <button class="btn-danger" data-toggle="modal" data-target="#删除">删除数据</button>
                 </div>
                 <br>
                 <thead>
                 <tr>
-                  <th>总目标</th>
-                  <th>一级指标</th>
-                  <th>二级指标</th>
-                  <th>一A</th>
-                  <th>一B</th>
-                  <th>一C</th>
-                  <th>二A</th>
-                  <th>二B</th>
-                  <th>二C</th>
-                  <th>三A</th>
-                  <th>三B</th>
-                  <th>三C</th>
+                  <th rowspan="2" style="font-size: 30px;width: 8%" >总目标</th>
+                  <th rowspan="2" style="font-size: 30px;width: 15%">属性</th>
+                  <th rowspan="2" style="font-size: 30px;width: 15%">指标</th>
+                  <th colspan="3">系统A</th>
+                  <th colspan="3">系统B</th>
+                  <th colspan="3">系统C</th>
                 </tr>
+                <tr>
+                  <th>Y1</th>
+                  <th>Y2</th>
+                  <th>Y3</th>
+                  <th>Y1</th>
+                  <th>Y2</th>
+                  <th>Y3</th>
+                  <th>Y1</th>
+                  <th>Y2</th>
+                  <th>Y3</th>
+                </tr>
+
                 </thead>
                 <tbody>
                 <tr>
-                  <td rowspan="22" style="width: 10%;font-size: 60px">智慧能源系统建设水平</td>
-                  <td rowspan="6" style="line-height: 200px;font-size: 30px;width: 15%">供能可靠性</td>
-                  <td>电压合格率</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td rowspan="26" style="width: 5%;font-size: 60px">智慧能源系统综合性能</td>
+                  <td rowspan="6" style="line-height: 200px;font-size: 30px;width: 15%">高效性</td>
+                  <td>综合能源利用效率</td>
+                  <td>44</td>
+                  <td>50</td>
+                  <td>58</td>
+                  <td>44</td>
+                  <td>54</td>
+                  <td>66</td>
+                  <td>51</td>
+                  <td>59</td>
+                  <td>64</td>
                 </tr>
                 <tr>
-                  <td>系统平均失能频率</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>智能诊断准确率</td>
+                  <td>43</td>
+                  <td>51</td>
+                  <td>62</td>
+                  <td>45</td>
+                  <td>55</td>
+                  <td>65</td>
+                  <td>52</td>
+                  <td>55</td>
+                  <td>64</td>
                 </tr>
                 <tr>
-                  <td>系统平均故障停电时间</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>设备利用率</td>
+                  <td>40</td>
+                  <td>43</td>
+                  <td>51</td>
+                  <td>45</td>
+                  <td>58</td>
+                  <td>62</td>
+                  <td>53</td>
+                  <td>57</td>
+                  <td>63</td>
                 </tr>
                 <tr>
-                  <td>系统能量不足期望值</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>配电网络损耗</td>
+                  <td>43</td>
+                  <td>44</td>
+                  <td>52</td>
+                  <td>47</td>
+                  <td>53</td>
+                  <td>60</td>
+                  <td>55</td>
+                  <td>56</td>
+                  <td>63</td>
                 </tr>
                 <tr>
-                  <td>供能质量</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>管网热损失率</td>
+                  <td>39</td>
+                  <td>54</td>
+                  <td>58</td>
+                  <td>38</td>
+                  <td>56</td>
+                  <td>68</td>
+                  <td>51</td>
+                  <td>52</td>
+                  <td>64</td>
                 </tr>
                 <tr>
-                  <td>信息网络可靠性</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>天然气输差</td>
+                  <td>38</td>
+                  <td>52</td>
+                  <td>54</td>
+                  <td>42</td>
+                  <td>58</td>
+                  <td>62</td>
+                  <td>49</td>
+                  <td>59</td>
+                  <td>64</td>
                 </tr>
 
                 <tr>
-                  <td rowspan="5" style="line-height: 200px;font-size: 30px;width: 15%">经济效益性</td>
-                  <td>CO2权限收益</td>
-                  <td>c</td>
-                  <td>d</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>环境税</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td rowspan="4" style="line-height: 200px;font-size: 30px;width: 15%">经济性</td>
+                  <td>碳权限收益</td>
+                  <td>44</td>
+                  <td>50</td>
+                  <td>60</td>
+                  <td>42</td>
+                  <td>57</td>
+                  <td>63</td>
+                  <td>48</td>
+                  <td>59</td>
+                  <td>68</td>
                 </tr>
                 <tr>
                   <td>运营成本</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>38</td>
+                  <td>50</td>
+                  <td>61</td>
+                  <td>42</td>
+                  <td>54</td>
+                  <td>66</td>
+                  <td>47</td>
+                  <td>49</td>
+                  <td>68</td>
                 </tr>
                 <tr>
-                  <td>售电收入</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>能源售卖收入</td>
+                  <td>47</td>
+                  <td>50</td>
+                  <td>60</td>
+                  <td>45</td>
+                  <td>51</td>
+                  <td>65</td>
+                  <td>46</td>
+                  <td>49</td>
+                  <td>64</td>
                 </tr>
                 <tr>
-                  <td>电力增长gdp</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
-                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">资源节约性</td>
-                  <td>节约土地面积</td>
-                  <td>c</td>
-                  <td>d</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>能源转换效率</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>能源经济性水平</td>
+                  <td>39</td>
+                  <td>50</td>
+                  <td>64</td>
+                  <td>45</td>
+                  <td>46</td>
+                  <td>47</td>
+                  <td>45</td>
+                  <td>49</td>
+                  <td>62</td>
                 </tr>
 
                 <tr>
-                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">环境友好性</td>
-                  <td>清洁能源减排量</td>
-                  <td>c</td>
-                  <td>d</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>电动汽车减排量</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td rowspan="6" style="line-height: 70px;font-size: 30px;width: 15%">可靠性</td>
+                  <td>平均失能频率</td>
+                  <td>43</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>48</td>
+                  <td>55</td>
+                  <td>65</td>
+                  <td>44</td>
+                  <td>49</td>
+                  <td>62</td>
                 </tr>
 
                 <tr>
-                  <td rowspan="3" style="line-height: 100px;font-size: 30px;width: 15%">社会效益性</td>
-                  <td>新增就业机会</td>
-                  <td>c</td>
-                  <td>d</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>平均失能持续时间</td>
+                  <td>45</td>
+                  <td>57</td>
+                  <td>63</td>
+                  <td>44</td>
+                  <td>55</td>
+                  <td>65</td>
+                  <td>46</td>
+                  <td>59</td>
+                  <td>64</td>
                 </tr>
                 <tr>
-                  <td>供能覆盖率</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>电压合格率</td>
+                  <td>60</td>
+                  <td>67</td>
+                  <td>69</td>
+                  <td>46</td>
+                  <td>57</td>
+                  <td>65</td>
+                  <td>49</td>
+                  <td>59</td>
+                  <td>64</td>
                 </tr>
                 <tr>
-                  <td>科研进步程度</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>天然气合格率</td>
+                  <td>65</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>47</td>
+                  <td>57</td>
+                  <td>65</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>64</td>
+                </tr>
+                <tr>
+                  <td>热能品味因子</td>
+                  <td>67</td>
+                  <td>70</td>
+                  <td>81</td>
+                  <td>44</td>
+                  <td>57</td>
+                  <td>65</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>64</td>
+                </tr>
+
+
+                <tr>
+                  <td>业务系统可用率</td>
+                  <td>64</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>40</td>
+                  <td>57</td>
+                  <td>65</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>64</td>
+                </tr>
+
+
+                <tr>
+                  <td rowspan="6" style="line-height: 70px;font-size: 30px;width: 15%">社会性</td>
+                  <td>清洁能源利用率</td>
+                  <td>60</td>
+                  <td>62</td>
+                  <td>63</td>
+                  <td>49</td>
+                  <td>55</td>
+                  <td>65</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>62</td>
+                </tr>
+                <tr>
+                  <td>电动汽车节省燃油量</td>
+                  <td>56</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>48</td>
+                  <td>55</td>
+                  <td>68</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>62</td>
+                </tr>
+                <tr>
+                  <td>二氧化碳减排量</td>
+                  <td>58</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>59</td>
+                  <td>61</td>
+                  <td>68</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>62</td>
+                </tr>
+                <tr>
+                  <td>二氧化硫减排量</td>
+                  <td>64</td>
+                  <td>65</td>
+                  <td>66</td>
+                  <td>49</td>
+                  <td>59</td>
+                  <td>68</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>64</td>
+                </tr>
+                <tr>
+                  <td>电动汽车占有率</td>
+                  <td>62</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>44</td>
+                  <td>59</td>
+                  <td>68</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>68</td>
                 </tr>
 
                 <tr>
-                  <td rowspan="4" style="line-height: 130px;font-size: 30px;width: 15%">智能互动性</td>
-                  <td>分布式能源接入率</td>
-                  <td>c</td>
-                  <td>d</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>新增就业岗位</td>
+                  <td>62</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>44</td>
+                  <td>59</td>
+                  <td>68</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>68</td>
+                </tr>
+
+                <tr>
+                  <td rowspan="4" style="line-height: 100px;font-size: 30px;width: 15%">互动性</td>
+                  <td>分布式能源利用率</td>
+                  <td>53</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>37</td>
+                  <td>61</td>
+                  <td>65</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>68</td>
+                </tr>
+                <tr>
+                  <td>削峰填谷量</td>
+                  <td>66</td>
+                  <td>70</td>
+                  <td>78</td>
+                  <td>39</td>
+                  <td>61</td>
+                  <td>65</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>68</td>
                 </tr>
                 <tr>
                   <td>智能仪表覆盖率</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>63</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>50</td>
+                  <td>61</td>
+                  <td>65</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>64</td>
                 </tr>
                 <tr>
-                  <td>供能方案可更改率</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>供能服务满意度</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>客户服务系统覆盖率</td>
+                  <td>60</td>
+                  <td>70</td>
+                  <td>72</td>
+                  <td>51</td>
+                  <td>55</td>
+                  <td>65</td>
+                  <td>50</td>
+                  <td>52</td>
+                  <td>64</td>
                 </tr>
 
                 </tbody>
@@ -559,66 +631,138 @@
   <div class="modal-dialog">
     <div class="modal-content" style="width: 950px;">
       <div class="modal-header">
+        插入新数据
       </div>
       <div class="modal-body">
           <div class="card card-info">
-            <div class="card-header">
-              <h3 class="card-title" style="font-size: x-large;">权重对比图</h3>
 
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-            <div class="row">
-
-              <div class="col-1">
-              </div>
-              <div class="col-3">
-                <div class="custom-control custom-checkbox cus">
-                  <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked="">
-                  <label for="customCheckbox2" class="custom-control-label" style="color: red">第一阶段</label>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="custom-control custom-checkbox cus">
-                  <input class="custom-control-input" type="checkbox" id="customCheckbox1" checked="">
-                  <label for="customCheckbox2" class="custom-control-label" style="color: black">第二阶段</label>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="custom-control custom-checkbox cus">
-                  <input class="custom-control-input" type="checkbox" id="customCheckbox3" checked="">
-                  <label for="customCheckbox2" class="custom-control-label" style="color: blue">第三阶段</label>
-                </div>
-              </div>
-            </div>
             <div class="card-body">
-              <div class="chart">
-                <div class="chartjs-size-monitor">
-                  <div class="chartjs-size-monitor-expand">
-                    <div class=""></div>
-                  </div>
-                  <div class="chartjs-size-monitor-shrink">
-                    <div class=""></div>
-                  </div>
-                </div>
-                <canvas id="lineChart" style="height: 251px; min-height: 250px; display: block; width: 356px;"
-                        width="267" height="188" class="chartjs-render-monitor"></canvas>
+              <input type="text" placeholder="年份">
+              <input type="text" placeholder="系统"/>
+              <br>
+              <br>
+              <div class="form-inline">
+                <label>属性选择</label>
+                &nbsp;&nbsp;&nbsp;
+                <select class="form-control">
+                  <option>经济性</option>
+                  <option>Y2</option>
+                  <option>Y3</option>
+                </select>
               </div>
+              <br>
+              指标数据
+              <input type="text" placeholder="碳权限收益"/>
+              <input type="text" placeholder="运营成本"/>
+              <input type="text" placeholder="能源售卖收入"/>
+              <input type="text" placeholder="能源经济性水平	"/>
+
             </div>
             <!-- /.card-body -->
           </div>
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal -->
 </div>
 <!-- ./wrapper -->
+<div class="modal fade" id="修改" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 950px;">
+      <div class="modal-header">
+        修改数据
+      </div>
+      <div class="modal-body">
+        <div class="card card-info">
+
+          <div class="card-body">
+            <div class="form-inline">
+              <label>年份</label>
+              <select class="form-control">
+                <option>Y1</option>
+                <option>Y2</option>
+                <option>Y3</option>
+              </select>
+              &nbsp;&nbsp;&nbsp;
+              <label>系统</label>
+              <select class="form-control">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+              </select>
+            </div>
+            <br>
+            <br>
+            <div class="form-inline">
+              <label>属性选择</label>
+              &nbsp;&nbsp;&nbsp;
+              <select class="form-control">
+                <option>经济性</option>
+                <option>Y2</option>
+                <option>Y3</option>
+              </select>
+              &nbsp;&nbsp;&nbsp;
+              <label>指标选择</label>
+              &nbsp;&nbsp;&nbsp;
+              <select class="form-control">
+                <option>碳权限收益</option>
+                <option>运营成本</option>
+                <option>能源售卖收入	</option>
+              </select>
+            </div>
+            <br>
+            原数据
+            44
+            新数据
+            <input type="text" placeholder=""/>
+
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
+
+<div class="modal fade" id="删除" tabindex="-1" role="dialog" aria-labelledby="删除" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 950px;">
+      <div class="modal-header">
+        删除数据
+      </div>
+      <div class="modal-body">
+        选择待删除对象
+        <div class="form-inline">
+          <label>年份</label>
+          <select class="form-control">
+            <option>Y1</option>
+            <option>Y2</option>
+            <option>Y3</option>
+          </select>
+          &nbsp;&nbsp;&nbsp;
+          <label>系统</label>
+          <select class="form-control">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">确定删除</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>

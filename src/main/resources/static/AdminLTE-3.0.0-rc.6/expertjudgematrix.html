@@ -65,13 +65,13 @@
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <!--<i class="far fa-comments"></i>-->
-          <span class="badge badge-info">管理员</span>
+          <span class="badge badge-info">专家</span>
         </a>
       </li>
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <span class="badge badge-light">张三</span>
+          <span class="badge badge-light">李四</span>
         </a>
       </li>
 
@@ -124,6 +124,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="./registercheck.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>注册审核</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./usermanage.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>角色管理</p>
@@ -143,7 +149,7 @@
             <a href="./indexdata.html" class="nav-link">
               <i class="nav-icon far fa-circle text-red"></i>
               <p>
-                系统指标数据
+                评价对象数据管理
               </p>
             </a>
           </li>
@@ -167,13 +173,13 @@
               <li class="nav-item">
                 <a href="./d-smerge.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DS融合层次分析法</p>
+                  <p>DS&AHP主观权重</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./entropy.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>熵权法与最终权重</p>
+                  <p>熵权法客观权重</p>
                 </a>
               </li>
             </ul>
@@ -184,7 +190,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-blue"></i>
               <p>
-                系统评价
+                评价分析
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -289,16 +295,14 @@
                 <tbody>
                 <tr>
                   <td style="width: 120px"></td>
-                  <td>供能可靠性</td>
-                  <td>经济效益性</td>
-                  <td>环境友好性</td>
-                  <td>资源节约性</td>
-                  <td>智能互动性</td>
-                  <td>社会效益性</td>
+                  <td>高效性</td>
+                  <td>经济性</td>
+                  <td>可靠性</td>
+                  <td>社会性</td>
+                  <td>互动性</td>
                 <tr>
-                  <td>供能可靠性</td>
+                  <td>高效性</td>
                   <td align="center">1</td>
-                  <td>#</td>
                   <td>#</td>
                   <td>#</td>
                   <td>#</td>
@@ -306,27 +310,15 @@
                 </tr>
 
                 <tr>
-                  <td>经济效益性</td>
+                  <td>经济性</td>
                   <td>?</td>
                   <td align="center">1</td>
                   <td>#</td>
                   <td>#</td>
                   <td>#</td>
-                  <td>#</td>
                 </tr>
                 <tr>
-                  <td>环境友好性</td>
-                  <td>?</td>
-                  <td>?</td>
-                  <td align="center">1</td>
-                  <td>#</td>
-                  <td>#</td>
-                  <td>#</td>
-
-                </tr>
-                <tr>
-                  <td>资源节约性</td>
-                  <td>?</td>
+                  <td>可靠性</td>
                   <td>?</td>
                   <td>?</td>
                   <td align="center">1</td>
@@ -335,8 +327,7 @@
 
                 </tr>
                 <tr>
-                  <td>智能互动性</td>
-                  <td>?</td>
+                  <td>社会性</td>
                   <td>?</td>
                   <td>?</td>
                   <td>?</td>
@@ -345,13 +336,13 @@
 
                 </tr>
                 <tr>
-                  <td>社会效益性</td>
-                  <td>?</td>
+                  <td>互动性</td>
                   <td>?</td>
                   <td>?</td>
                   <td>?</td>
                   <td>?</td>
                   <td align="center">1</td>
+
                 </tr>
                 </tbody>
               </table>
@@ -374,7 +365,7 @@
               <table class="table table-bordered table-striped">
                 <br>
                 <div class="form-inline">
-                  <label>当前输入: 经济效益性/供能可靠性</label>
+                  <label>当前输入: a21 经济性/高效性</label>
                   &nbsp;
                   &nbsp;
                   &nbsp;

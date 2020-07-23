@@ -124,6 +124,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="./registercheck.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>注册审核</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./usermanage.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>角色管理</p>
@@ -143,7 +149,7 @@
             <a href="./indexdata.html" class="nav-link">
               <i class="nav-icon far fa-circle text-red"></i>
               <p>
-                系统指标数据
+                评价对象数据管理
               </p>
             </a>
           </li>
@@ -167,13 +173,13 @@
               <li class="nav-item">
                 <a href="./d-smerge.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DS融合层次分析法</p>
+                  <p>DS&AHP主观权重</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./entropy.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>熵权法与最终权重</p>
+                  <p>熵权法客观权重</p>
                 </a>
               </li>
             </ul>
@@ -184,7 +190,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-blue"></i>
               <p>
-                系统评价
+                评价分析
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -229,6 +235,165 @@
         <!--<p style="text-align: center">层次分析法指标赋权</p>-->
 
         <!-- Small boxes (Stat box) -->
+        <!--<div class="row">-->
+          <!--<div class="col-lg-12 col-12">-->
+            <!--<div class="card card-gray">-->
+              <!--<div class="card-header">-->
+                <!--<h3 style="text-align: center">权重表</h3>-->
+              <!--</div>-->
+              <!--<table class="table table-bordered" style="text-align: center;">-->
+                <!--<br>-->
+                <!--<div class="form-inline">-->
+                  <!--<button class="btn-primary" data-toggle="modal" data-target="#myModal">查看权重对比图</button>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<thead>-->
+                <!--<tr>-->
+                  <!--<th>总目标</th>-->
+                  <!--<th>一级指标</th>-->
+                  <!--<th>一级指标权重</th>-->
+                  <!--<th>二级指标</th>-->
+                  <!--<th>熵权法权重</th>-->
+                  <!--<th>组合权重</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                  <!--<td rowspan="22" style="width: 10%;font-size: 60px">智慧能源系统建设水平</td>-->
+                  <!--<td rowspan="6" style="line-height: 200px;font-size: 30px;width: 15%">供能可靠性</td>-->
+                  <!--<td rowspan="6" style="line-height: 200px;font-size: 30px;width: 10%">0.4676</td>-->
+                  <!--<td>电压合格率</td>-->
+                  <!--<td>c</td>-->
+                  <!--<td>d</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>系统平均失能频率</td>-->
+                  <!--<td>2</td>-->
+                  <!--<td>3</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>系统平均故障停电时间</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>系统能量不足期望值</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>供能质量</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>信息网络可靠性</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                  <!--<td rowspan="5" style="line-height: 200px;font-size: 30px;width: 15%">经济效益性</td>-->
+                  <!--<td rowspan="5" style="line-height: 200px;font-size: 30px;width: 10%">a</td>-->
+                  <!--<td>CO2权限收益</td>-->
+                  <!--<td>c</td>-->
+                  <!--<td>d</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>环境税</td>-->
+                  <!--<td>2</td>-->
+                  <!--<td>3</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>运营成本</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>售电收入</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>电力增长gdp</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                  <!--<td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">资源节约性</td>-->
+                  <!--<td rowspan="2" style="line-height: 70px;font-size: 30px;width: 10%">a</td>-->
+                  <!--<td>节约土地面积</td>-->
+                  <!--<td>c</td>-->
+                  <!--<td>d</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>能源转换效率</td>-->
+                  <!--<td>2</td>-->
+                  <!--<td>3</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                  <!--<td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">环境友好性</td>-->
+                  <!--<td rowspan="2" style="line-height: 70px;font-size: 30px;width: 10%">a</td>-->
+                  <!--<td>清洁能源减排量</td>-->
+                  <!--<td>c</td>-->
+                  <!--<td>d</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>电动汽车减排量</td>-->
+                  <!--<td>2</td>-->
+                  <!--<td>3</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                  <!--<td rowspan="3" style="line-height: 100px;font-size: 30px;width: 15%">社会效益性</td>-->
+                  <!--<td rowspan="3" style="line-height: 100px;font-size: 30px;width: 10%">a</td>-->
+                  <!--<td>新增就业机会</td>-->
+                  <!--<td>c</td>-->
+                  <!--<td>d</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>供能覆盖率</td>-->
+                  <!--<td>2</td>-->
+                  <!--<td>3</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>科研进步程度</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                  <!--<td rowspan="4" style="line-height: 130px;font-size: 30px;width: 15%">智能互动性</td>-->
+                  <!--<td rowspan="4" style="line-height: 130px;font-size: 30px;width: 10%">a</td>-->
+                  <!--<td>分布式能源接入率</td>-->
+                  <!--<td>c</td>-->
+                  <!--<td>d</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>智能仪表覆盖率</td>-->
+                  <!--<td>2</td>-->
+                  <!--<td>3</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>供能方案可更改率</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>供能服务满意度</td>-->
+                  <!--<td></td>-->
+                  <!--<td></td>-->
+                <!--</tr>-->
+
+                <!--</tbody>-->
+              <!--</table>-->
+            <!--</div>-->
+
+          <!--</div>-->
+
+        <!--</div>-->
         <div class="row">
           <div class="col-lg-12 col-12">
             <div class="card card-gray">
@@ -238,147 +403,195 @@
               <table class="table table-bordered" style="text-align: center;">
                 <br>
                 <div class="form-inline">
-                  <button class="btn-primary" data-toggle="modal" data-target="#myModal">查看权重对比图</button>
+                  <button class="btn-primary" data-toggle="modal" data-target="#myModal">客观权重计算</button>
                 </div>
                 <br>
                 <thead>
                 <tr>
-                  <th>总目标</th>
-                  <th>一级指标</th>
-                  <th>一级指标权重</th>
-                  <th>二级指标</th>
-                  <th>熵权法权重</th>
-                  <th>组合权重</th>
+                  <th style="font-size: 30px;width: 50px">总目标</th>
+                  <th style="font-size: 30px;width: 15%">属性</th>
+                  <th style="font-size: 30px;width: 15%">属性主观权重</th>
+                  <th style="font-size: 30px;width: 15%">指标</th>
+                  <th style="font-size: 30px;width: 15%">指标客观权重</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td rowspan="22" style="width: 10%;font-size: 60px">智慧能源系统建设水平</td>
-                  <td rowspan="6" style="line-height: 200px;font-size: 30px;width: 15%">供能可靠性</td>
-                  <td rowspan="6" style="line-height: 200px;font-size: 30px;width: 10%">0.4676</td>
-                  <td>电压合格率</td>
-                  <td>c</td>
-                  <td>d</td>
+                  <td rowspan="26" style="width: 5%;font-size: 60px">智慧能源系统综合性能</td>
+                  <td rowspan="6" style="line-height: 300px;font-size: 30px;width: 15%">高效性</td>
+                  <td rowspan="6" style="line-height: 300px;font-size: 30px;width: 15%">0.2987</td>
+                  <td>综合能源利用效率</td>
+                  <td>0.1721</td>
+
                 </tr>
                 <tr>
-                  <td>系统平均失能频率</td>
-                  <td>2</td>
-                  <td>3</td>
+                  <td>智能诊断准确率</td>
+                  <td>0.1695
+                  </td>
+
                 </tr>
                 <tr>
-                  <td>系统平均故障停电时间</td>
-                  <td></td>
-                  <td></td>
+                  <td>设备利用率</td>
+                  <td>0.1672
+                  </td>
+
                 </tr>
                 <tr>
-                  <td>系统能量不足期望值</td>
-                  <td></td>
-                  <td></td>
+                  <td>配电网络损耗</td>
+                  <td>0.1721
+                  </td>
+
                 </tr>
                 <tr>
-                  <td>供能质量</td>
-                  <td></td>
-                  <td></td>
+                  <td>管网热损失率</td>
+                  <td>0.1712
+                  </td>
+
                 </tr>
                 <tr>
-                  <td>信息网络可靠性</td>
-                  <td></td>
-                  <td></td>
+                  <td>天然气输差</td>
+                  <td>0.1480
+                  </td>
+
                 </tr>
 
                 <tr>
-                  <td rowspan="5" style="line-height: 200px;font-size: 30px;width: 15%">经济效益性</td>
-                  <td rowspan="5" style="line-height: 200px;font-size: 30px;width: 10%">a</td>
-                  <td>CO2权限收益</td>
-                  <td>c</td>
-                  <td>d</td>
-                </tr>
-                <tr>
-                  <td>环境税</td>
-                  <td>2</td>
-                  <td>3</td>
+                  <td rowspan="4" style="line-height: 200px;font-size: 30px;width: 15%">经济性</td>
+                  <td rowspan="4" style="line-height: 200px;font-size: 30px;width: 15%">0.1593</td>
+                  <td>碳权限收益</td>
+                  <td>0.2538
+                  </td>
+
                 </tr>
                 <tr>
                   <td>运营成本</td>
-                  <td></td>
-                  <td></td>
+                  <td>0.2368
+                  </td>
+
                 </tr>
                 <tr>
-                  <td>售电收入</td>
-                  <td></td>
-                  <td></td>
+                  <td>能源售卖收入</td>
+                  <td>0.2853
+                  </td>
+
                 </tr>
                 <tr>
-                  <td>电力增长gdp</td>
-                  <td></td>
-                  <td></td>
+                  <td>能源经济性水平</td>
+                  <td>0.2242
+                  </td>
+
                 </tr>
 
                 <tr>
-                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">资源节约性</td>
-                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 10%">a</td>
-                  <td>节约土地面积</td>
-                  <td>c</td>
-                  <td>d</td>
-                </tr>
-                <tr>
-                  <td>能源转换效率</td>
-                  <td>2</td>
-                  <td>3</td>
+                  <td rowspan="6" style="line-height: 300px;font-size: 30px;width: 15%">可靠性</td>
+                  <td rowspan="6" style="line-height: 300px;font-size: 30px;width: 15%">0.2987
+                  </td>
+                  <td>平均失能频率</td>
+                  <td>0.1929
+                  </td>
+
                 </tr>
 
                 <tr>
-                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 15%">环境友好性</td>
-                  <td rowspan="2" style="line-height: 70px;font-size: 30px;width: 10%">a</td>
-                  <td>清洁能源减排量</td>
-                  <td>c</td>
-                  <td>d</td>
+                  <td>平均失能持续时间</td>
+                  <td>0.1942
+                  </td>
+
                 </tr>
                 <tr>
-                  <td>电动汽车减排量</td>
-                  <td>2</td>
-                  <td>3</td>
+                  <td>电压合格率</td>
+                  <td>0.1555
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>天然气合格率</td>
+                  <td>0.1575
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>热能品味因子</td>
+                  <td>0.1598
+                  </td>
+
+                </tr>
+
+
+                <tr>
+                  <td>业务系统可用率</td>
+                  <td>0.1402
+                  </td>
+
+                </tr>
+
+
+                <tr>
+                  <td rowspan="6" style="line-height: 70px;font-size: 30px;width: 15%">社会性</td>
+                  <td rowspan="6" style="line-height: 70px;font-size: 30px;width: 15%">0.1040
+                  </td>
+                  <td>清洁能源利用率</td>
+                  <td>0.1711
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>电动汽车节省燃油量</td>
+                  <td>0.1884
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>二氧化碳减排量</td>
+                  <td>0.1549
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>二氧化硫减排量</td>
+                  <td>0.1621
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>电动汽车占有率</td>
+                  <td>0.1522
+                  </td>
+
                 </tr>
 
                 <tr>
-                  <td rowspan="3" style="line-height: 100px;font-size: 30px;width: 15%">社会效益性</td>
-                  <td rowspan="3" style="line-height: 100px;font-size: 30px;width: 10%">a</td>
-                  <td>新增就业机会</td>
-                  <td>c</td>
-                  <td>d</td>
-                </tr>
-                <tr>
-                  <td>供能覆盖率</td>
-                  <td>2</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>科研进步程度</td>
-                  <td></td>
-                  <td></td>
+                  <td>新增就业岗位</td>
+                  <td>0.1713
+                  </td>
+
                 </tr>
 
                 <tr>
-                  <td rowspan="4" style="line-height: 130px;font-size: 30px;width: 15%">智能互动性</td>
-                  <td rowspan="4" style="line-height: 130px;font-size: 30px;width: 10%">a</td>
-                  <td>分布式能源接入率</td>
-                  <td>c</td>
-                  <td>d</td>
+                  <td rowspan="4" style="line-height: 100px;font-size: 30px;width: 15%">互动性</td>
+                  <td rowspan="4" style="line-height: 100px;font-size: 30px;width: 15%">0.1393</td>
+                  <td>分布式能源利用率</td>
+                  <td>0.2516
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>削峰填谷量</td>
+                  <td>0.2676
+                  </td>
+
                 </tr>
                 <tr>
                   <td>智能仪表覆盖率</td>
-                  <td>2</td>
-                  <td>3</td>
+                  <td>0.2361
+                  </td>
+
                 </tr>
                 <tr>
-                  <td>供能方案可更改率</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>供能服务满意度</td>
-                  <td></td>
-                  <td></td>
+                  <td>客户服务系统覆盖率</td>
+                  <td>0.2446
+                  </td>
+
                 </tr>
 
                 </tbody>
@@ -388,6 +601,7 @@
           </div>
 
         </div>
+
       </div>
       <!-- /.row -->
   </section>

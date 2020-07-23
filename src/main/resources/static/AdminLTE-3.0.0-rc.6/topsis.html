@@ -124,6 +124,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="./registercheck.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>注册审核</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./usermanage.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>角色管理</p>
@@ -143,7 +149,7 @@
             <a href="./indexdata.html" class="nav-link">
               <i class="nav-icon far fa-circle text-red"></i>
               <p>
-                系统指标数据
+                评价对象数据管理
               </p>
             </a>
           </li>
@@ -167,13 +173,13 @@
               <li class="nav-item">
                 <a href="./d-smerge.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DS融合层次分析法</p>
+                  <p>DS&AHP主观权重</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./entropy.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>熵权法与最终权重</p>
+                  <p>熵权法客观权重</p>
                 </a>
               </li>
             </ul>
@@ -184,7 +190,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-blue"></i>
               <p>
-                系统评价
+                评价分析
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -227,49 +233,131 @@
 
     <!-- Main content -->
     <section class="content">
+      <button class="btn-primary" data-toggle="modal" data-target="#评价对象">选择评价对象</button>
+      <br>
+      <br>
+
       <div class="container-fluid">
 
+        <h1>无协调性静态评价结果</h1>
         <div class="row">
-          <div class="col-lg-6 col-6" style="font-size: x-large;">
+
+
+          <div class="col-lg-6 col-6">
             <div class="card card-gray">
               <div class="card-header">
                 <h3 style="text-align: center">智慧能源系统评分表</h3>
               </div>
               <br>
-              <table class="table table-striped table-bordered">
+              <table class="table-bordered" style="text-align: center">
                 <thead>
                 <tr>
-                  <td></td>
-                  <td>2017</td>
-                  <td>2018</td>
-                  <td>2019</td>
+                  <td>系统</td>
+                  <td>年份</td>
+                  <td>高效性</td>
+                  <td>经济性</td>
+                  <td>可靠性</td>
+                  <td>社会性</td>
+                  <td>互动性</td>
+                  <td>综合评分</td>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>南京</td>
-                  <td>87</td>
-                  <td>89</td>
-                  <td>93</td>
+                  <td rowspan="3" style="line-height: 100px">A</td>
+                  <td>Y1</td>
+                  <td>0.0638 </td>
+                  <td>0.0863 </td>
+                  <td>0.4203 </td>
+                  <td>0.5288 </td>
+                  <td>0.5967 </td>
+                  <td>0.2965 </td>
                 </tr>
                 <tr>
-                  <td>杭州</td>
-                  <td>66</td>
-                  <td>90</td>
-                  <td>91</td>
+                  <td>Y2</td>
+                  <td>0.3552 </td>
+                  <td>0.3482 </td>
+                  <td>0.7884 </td>
+                  <td>0.8124 </td>
+                  <td>0.8737 </td>
+                  <td>0.6033 </td>
                 </tr>
                 <tr>
-                  <td>上海</td>
-                  <td>77</td>
-                  <td>78</td>
-                  <td>90</td>
+                  <td>Y3</td>
+                  <td>0.7200 </td>
+                  <td>0.7711 </td>
+                  <td>0.9561 </td>
+                  <td>0.8838 </td>
+                  <td>1.0000 </td>
+                  <td>0.8547 </td>
                 </tr>
+                <tr>
+                  <td rowspan="3" style="line-height: 100px">B</td>
+                  <td>Y1</td>
+                  <td>0.1427 </td>
+                  <td>0.1282 </td>
+                  <td>0.0761 </td>
+                  <td>0.1398 </td>
+                  <td>0.1821 </td>
+                  <td>0.1257 </td>
+                </tr>
+                <tr>
+                  <td>Y2</td>
+                  <td>0.5409 </td>
+                  <td>0.4386 </td>
+                  <td>0.4508 </td>
+                  <td>0.4529 </td>
+                  <td>0.5113 </td>
+                  <td>0.4844 </td>
+                </tr>
+                <tr>
+                  <td>Y3</td>
+                  <td>0.9211 </td>
+                  <td>0.7421 </td>
+                  <td>0.9263 </td>
+                  <td>0.8619 </td>
+                  <td>0.6344 </td>
+                  <td>0.8480 </td>
+                </tr>
+                <tr>
+                  <td rowspan="3" style="line-height: 100px">C</td>
+                  <td>Y1</td>
+                  <td>0.5041 </td>
+                  <td>0.2507 </td>
+                  <td>0.1471 </td>
+                  <td>0.1154 </td>
+                  <td>0.0623 </td>
+                  <td>0.2551 </td>
+                </tr>
+                <tr>
+                  <td>Y2</td>
+                  <td>0.6995 </td>
+                  <td>0.4180 </td>
+                  <td>0.5682 </td>
+                  <td>0.2914 </td>
+                  <td>0.1871 </td>
+                  <td>0.5016 </td>
+                </tr>
+                <tr>
+                  <td>Y3</td>
+                  <td>0.9579 </td>
+                  <td>0.9571 </td>
+                  <td>0.7152 </td>
+                  <td>0.7349 </td>
+                  <td>0.7614 </td>
+                  <td>0.8347 </td>
+                </tr>
+
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="col-lg-6 col-6">
-            <div class="card card-info">
+          <div class="col-lg-1 col-1">
+          </div>
+
+
+          <div class="col-lg-4 col-4">
+            <div class="card card-info"  style="height: 426px;">
               <div class="card-header">
                 <h3 class="card-title" style="font-size: x-large;">智慧能源系统评分图</h3>
 
@@ -287,19 +375,19 @@
                 <div class="col-3">
                   <div class="custom-control custom-checkbox cus">
                     <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked="">
-                    <label for="customCheckbox2" class="custom-control-label" style="color: red">南京</label>
+                    <label for="customCheckbox2" class="custom-control-label" style="color: orange">系统A</label>
                   </div>
                 </div>
                 <div class="col-3">
                   <div class="custom-control custom-checkbox cus">
                     <input class="custom-control-input" type="checkbox" id="customCheckbox1" checked="">
-                    <label for="customCheckbox2" class="custom-control-label" style="color: black">上海</label>
+                    <label for="customCheckbox2" class="custom-control-label" style="color: black">系统B</label>
                   </div>
                 </div>
                 <div class="col-3">
                   <div class="custom-control custom-checkbox cus">
                     <input class="custom-control-input" type="checkbox" id="customCheckbox3" checked="">
-                    <label for="customCheckbox2" class="custom-control-label" style="color: blue">杭州</label>
+                    <label for="customCheckbox2" class="custom-control-label" style="color: blue">系统C</label>
                   </div>
                 </div>
               </div>
@@ -322,10 +410,177 @@
           </div>
         </div>
 
+        <br>
+        <h1>协调性评价结果</h1>
         <div class="row">
+          <div class="col-lg-6 col-6">
+            <div class="card card-gray">
+              <div class="card-header">
+                <h3 style="text-align: center">智慧能源系统评分表</h3>
+              </div>
+              <br>
+              <table class="table-bordered" style="text-align: center">
+                <thead>
+                <tr>
+                  <td>系统</td>
+                  <td>年份</td>
+                  <td>高效性</td>
+                  <td>经济性</td>
+                  <td>可靠性</td>
+                  <td>社会性</td>
+                  <td>互动性</td>
+                  <td>综合评分</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td rowspan="3" style="line-height: 100px">A</td>
+                  <td>Y1</td>
+                  <td>0.0576 </td>
+                  <td>0.0846 </td>
+                  <td>0.3918 </td>
+                  <td>0.5026 </td>
+                  <td>0.5623 </td>
+                  <td>0.1764 </td>
+                </tr>
+                <tr>
+                  <td>Y2</td>
+                  <td>0.3204 </td>
+                  <td>0.3415 </td>
+                  <td>0.7349 </td>
+                  <td>0.7722 </td>
+                  <td>0.8234 </td>
+                  <td>0.3424 </td>
+                </tr>
+                <tr>
+                  <td>Y3</td>
+                  <td>0.6495 </td>
+                  <td>0.7561 </td>
+                  <td>0.8912 </td>
+                  <td>0.8401 </td>
+                  <td>0.9424 </td>
+                  <td>0.7157 </td>
+                </tr>
+                <tr>
+                  <td rowspan="3" style="line-height: 100px">B</td>
+                  <td>Y1</td>
+                  <td>0.1306 </td>
+                  <td>0.1247 </td>
+                  <td>0.0750 </td>
+                  <td>0.1345 </td>
+                  <td>0.1730 </td>
+                  <td>0.1183 </td>
+                </tr>
+                <tr>
+                  <td>Y2</td>
+                  <td>0.4949 </td>
+                  <td>0.4249 </td>
+                  <td>0.4443 </td>
+                  <td>0.4359 </td>
+                  <td>0.4857 </td>
+                  <td>0.4587 </td>
+                </tr>
+                <tr>
+                  <td>Y3</td>
+                  <td>0.8428 </td>
+                  <td>0.7068 </td>
+                  <td>0.9130 </td>
+                  <td>0.8295 </td>
+                  <td>0.6027 </td>
+                  <td>0.7192 </td>
+                </tr>
+                <tr>
+                  <td rowspan="3" style="line-height: 100px">C</td>
+                  <td>Y1</td>
+                  <td>0.4600 </td>
+                  <td>0.2373 </td>
+                  <td>0.1414 </td>
+                  <td>0.1128 </td>
+                  <td>0.0623 </td>
+                  <td>0.1940 </td>
+                </tr>
+                <tr>
+                  <td>Y2</td>
+                  <td>0.6383 </td>
+                  <td>0.3942 </td>
+                  <td>0.5463 </td>
+                  <td>0.2849 </td>
+                  <td>0.1870 </td>
+                  <td>0.3569 </td>
+                </tr>
+                <tr>
+                  <td>Y3</td>
+                  <td>0.8740 </td>
+                  <td>0.9051 </td>
+                  <td>0.6876 </td>
+                  <td>0.7184 </td>
+                  <td>0.7612 </td>
+                  <td>0.7337 </td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-1 col-1">
+          </div>
+          <div class="col-lg-4 col-4">
+            <div class="card card-info" style="height: 426px;">
+              <div class="card-header">
+                <h3 class="card-title" style="font-size: x-large;">智慧能源系统评分图</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col-1">
+                </div>
+                <div class="col-3">
+                  <div class="custom-control custom-checkbox cus">
+                    <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked="">
+                    <label for="customCheckbox2" class="custom-control-label" style="color: orange">系统A</label>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="custom-control custom-checkbox cus">
+                    <input class="custom-control-input" type="checkbox" id="customCheckbox1" checked="">
+                    <label for="customCheckbox2" class="custom-control-label" style="color: black">系统B</label>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="custom-control custom-checkbox cus">
+                    <input class="custom-control-input" type="checkbox" id="customCheckbox3" checked="">
+                    <label for="customCheckbox2" class="custom-control-label" style="color: blue">系统C</label>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                  <div class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand">
+                      <div class=""></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink">
+                      <div class=""></div>
+                    </div>
+                  </div>
+                  <canvas id="lineChart1" style="height: 251px; min-height: 250px; display: block; width: 356px;"
+                          width="267" height="188" class="chartjs-render-monitor"></canvas>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+
         </div>
 
       </div>
+
       <!-- /.row -->
     </section>
     <!-- /.content -->
@@ -336,6 +591,86 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
+  <div class="modal fade" id="评价对象" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 950px;">
+        <div class="modal-header">
+          选择评价对象
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th><button> 全选</button></th>
+                  <th>系统</th>
+                  <th>年份</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统A</td>
+                  <td>Y1</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统A</td>
+                  <td>Y2</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统A</td>
+                  <td>Y3</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统B</td>
+                  <td>Y1</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统B</td>
+                  <td>Y2</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统B</td>
+                  <td>Y3</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统C</td>
+                  <td>Y1</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统C</td>
+                  <td>Y2</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td >系统C</td>
+                  <td>Y3</td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+
 </div>
 <!-- ./wrapper -->
 
@@ -396,21 +731,24 @@
   };
 
   var areaChartData = {
-    labels: ['2017', '2018', '2019'],
+    labels: ['Y1', 'Y2', 'Y3'],
     datasets: [
       {
-        label: '杭州',
+        label: '系统A',
         backgroundColor: 'rgba(60,141,188,0.9)',
-        borderColor: 'blue',
+        borderColor: 'orange',
         pointRadius: false,
         pointColor: '#3b8bba',
         pointStrokeColor: 'rgba(60,141,188,1)',
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
-        data: [66, 90, 91]
+        data: [0.2965
+          , 	0.6033
+          , 	0.8547
+        ]
       },
       {
-        label: '上海',
+        label: '系统B',
         backgroundColor: 'rgba(60,141,188,0.9)',
         borderColor: 'black',
         pointRadius: false,
@@ -418,22 +756,27 @@
         pointStrokeColor: 'rgba(60,141,188,1)',
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
-        data: [77, 78, 90]
+        data: [0.1257
+          , 	0.4844
+          , 	0.8480
+        ]
       },
       {
-        label: '南京',
+        label: '系统C',
 //        backgroundColor: 'rgba(210, 214, 222, 1)',
-        borderColor: 'red',
+        borderColor: 'blue',
         pointRadius: false,
         pointColor: 'red',
         pointStrokeColor: 'red',
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(220,220,220,1)',
-        data: [87, 89, 93]
+        data: [0.2551
+          , 	0.5016
+          , 	0.8347
+        ]
       },
     ]
   };
-
 
   var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
   var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
@@ -447,6 +790,91 @@
     type: 'line',
     data: lineChartData,
     options: lineChartOptions
+  })
+
+  var areaChartOptions1 = {
+    maintainAspectRatio: false,
+    responsive: true,
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        gridLines: {
+          display: false,
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          display: false,
+        }
+      }]
+    }
+  };
+
+  var areaChartData1 = {
+    labels: ['Y1', 'Y2', 'Y3'],
+    datasets: [
+      {
+        label: '系统A',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'orange',
+        pointRadius: false,
+        pointColor: '#3b8bba',
+        pointStrokeColor: 'rgba(60,141,188,1)',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(60,141,188,1)',
+        data: [0.1764
+          , 0.3424
+          , 	0.7157
+
+        ]
+      },
+      {
+        label: '系统B',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'black',
+        pointRadius: false,
+        pointColor: '#3b8bba',
+        pointStrokeColor: 'rgba(60,141,188,1)',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(60,141,188,1)',
+        data: [0.1183
+          , 	0.4587
+          , 	0.7192
+
+        ]
+      },
+      {
+        label: '系统C',
+//        backgroundColor: 'rgba(210, 214, 222, 1)',
+        borderColor: 'blue',
+        pointRadius: false,
+        pointColor: 'red',
+        pointStrokeColor: 'red',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(220,220,220,1)',
+        data: [0.1940
+          , 	0.3569
+          , 	0.7337
+
+        ]
+      },
+    ]
+  };
+
+  var lineChartCanvas1 = $('#lineChart1').get(0).getContext('2d')
+  var lineChartOptions1 = jQuery.extend(true, {}, areaChartOptions1)
+  var lineChartData1 = jQuery.extend(true, {}, areaChartData1)
+  lineChartData1.datasets[0].fill = false;
+  lineChartData1.datasets[1].fill = false;
+  lineChartData1.datasets[2].fill = false;
+  lineChartOptions1.datasetFill = false
+
+  var lineChart1 = new Chart(lineChartCanvas1, {
+    type: 'line',
+    data: lineChartData1,
+    options: lineChartOptions1
   })
 </script>
 </body>

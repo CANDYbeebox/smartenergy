@@ -136,7 +136,7 @@ public class Topsis {
         double[] C1 = new double[topsis.indexCnt];
         double[] C2 = new double[topsis.indexCnt];
         double[] C3 = new double[topsis.indexCnt];
-        try (BufferedReader br = new BufferedReader(new FileReader("0209.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("indexCooidinate.txt"))) {
             String tmp = null;
             int idx = 0;
             for (int j = 0; j < end; j++) {
@@ -176,43 +176,40 @@ public class Topsis {
 
     public static void main(String[] args) {
 
-        Double[] weights1 = {0.1383,
-                0.1377,
-                0.2383,
-                0.1402,
-                0.2046,
-                0.1409,
+        Double[] weights1 = {0.1721,
+                0.1695,
+                0.1672,
+                0.1721,
+                0.1712,
+                0.148
+
+        };
+        Double[] weights2 = {0.2538,
+                0.2368,
+                0.2853,
+                0.2242,
+
+        };
+        Double[] weights3 = {0.1929,
+                0.1942,
+                0.1555,
+                0.1575,
+                0.1598,
+                0.1402
 
 
         };
-        Double[] weights2 = {0.2569,
-                0.2413,
-                0.2186,
-                0.2832,
-
-
+        Double[] weights4 = {0.1711,
+                0.1884,
+                0.1549,
+                0.1621,
+                0.1522,
+                0.1713
         };
-        Double[] weights3 = {0.1541,
-                0.1594,
-                0.1972,
-                0.1671,
-                0.1705,
-                0.1517,
-
-
-        };
-        Double[] weights4 = {0.1618,
-                0.1336,
-                0.1937,
-                0.1398,
-                0.1446,
-                0.2264,
-        };
-        Double[] weights5 = {0.2350,
-                0.2931,
-                0.2246,
-                0.2473,
-
+        Double[] weights5 = {0.2516,
+                0.2676,
+                0.2361,
+                0.2446,
         };
         Topsis topsis = new Topsis(0, new ArrayList<>());
         topsis.helper(0, 6, weights1);

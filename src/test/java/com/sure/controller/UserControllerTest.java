@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 /**
  * Created by SURE on ${DATA}.
  */
-@PerfTest(invocations = 1, threads = 40)
+@PerfTest(invocations = 1000, threads = 10)
 @Required(max = 1200, average = 250, totalTime = 6000)
 public class UserControllerTest {
     @Autowired

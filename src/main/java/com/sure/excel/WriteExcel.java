@@ -1,9 +1,5 @@
 package com.sure.excel;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
@@ -11,26 +7,36 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * Created by SURE on ${DATA}.
  */
-public class ReadExcel {
+public class WriteExcel {
     public static void main(String[] args) throws IOException {
-        ReadExcel obj = new ReadExcel();
-        // 此处为我创建Excel路径：E:/zhanhj/studysrc/jxl下
-        File file = new File("E:/read1.xls");
-        List excelList = obj.readExcel(file);
-        System.out.println("list中的数据打印出来");
-        int[][] cnt = new int[29][5];
-        for (int i = 0; i < excelList.size(); i++) {
-            List list = (List) excelList.get(i);
-            for (int j = 0; j < list.size(); j++) {
-                cnt[i][Integer.valueOf((String) list.get(j)) - 1]++;
-                System.out.print(list.get(j));
+        WriteExcel obj = new WriteExcel();
+        Scanner sc;
+        List<List<Double>> matrix = new ArrayList<>();
+        List<List<Double>> data = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("indexCooidinate.txt"))) {
+            String tmp = null;
+            for (int i = 0; i < 26; i++) {
+                tmp = br.readLine();
+                sc = new Scanner(tmp);
+                List<Double> one = new ArrayList<>();
+                data.add(one);
+                for (int j = 0; j < 9; j++) {
+                    one.add(sc.nextDouble());
+                }
             }
-            System.out.println();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
 
         //写
         //创建excel文件
@@ -40,12 +46,12 @@ public class ReadExcel {
         // 创建一个工作表
         XSSFSheet Newsheet = Newworkbook.createSheet("sheet1");
         // 将数据填入新的表格中
-        for (int row = 0; row < cnt.length; ++row) {
+        for (int row = 0; row < data.size(); ++row) {
             //创建行
             XSSFRow Newrows = Newsheet.createRow(row);
-            for (int col = cnt[0].length - 1; col >= 0; --col) {
+            for (int col = data.get(0).size() - 1; col >= 0; --col) {
                 //按列写入
-                Newrows.createCell(cnt[0].length - 1 - col).setCellValue(cnt[row][col]);
+                Newrows.createCell(data.get(0).size() - 1 - col).setCellValue(data.get(row).get(col));
             }
             //将excel写入
             FileOutputStream fileOutputStream = new FileOutputStream(NewxlsFile);

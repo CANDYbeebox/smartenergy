@@ -124,6 +124,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="./registercheck.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>注册审核</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="./usermanage.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>角色管理</p>
@@ -143,7 +149,7 @@
             <a href="./indexdata.html" class="nav-link">
               <i class="nav-icon far fa-circle text-red"></i>
               <p>
-                系统指标数据
+                评价对象数据管理
               </p>
             </a>
           </li>
@@ -167,13 +173,13 @@
               <li class="nav-item">
                 <a href="./d-smerge.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DS融合层次分析法</p>
+                  <p>DS&AHP主观权重</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./entropy.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>熵权法与最终权重</p>
+                  <p>熵权法客观权重</p>
                 </a>
               </li>
             </ul>
@@ -184,7 +190,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-circle text-blue"></i>
               <p>
-                系统评价
+                评价分析
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -229,143 +235,36 @@
     <section class="content">
       <div class="container-fluid">
 
-        <div class="row">
-          <div class="col-lg-6 col-6" style="font-size: 19px;">
-            <div class="card card-gray">
-              <div class="card-header">
-                <h3 style="text-align: center">智慧能源系统各属性评分表</h3>
-              </div>
-              <br>
-              <table class="table-bordered">
-                <thead>
-                <tr>
-                  <td>时期</td>
-                  <td>地区</td>
-                  <td>供能可靠性</td>
-                  <td>经济效益性</td>
-                  <td>环境友好性</td>
-                  <td>资源节约性</td>
-                  <td>智能互动性</td>
-                  <td>社会效益性</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td rowspan="3" style="line-height: 100px">一</td>
-                  <td>A</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
-                <tr>
-                  <td>B</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
-                <tr>
-                  <td>C</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
-                <tr>
-                  <td rowspan="3" style="line-height: 100px">二</td>
-                  <td>A</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
-                <tr>
-                  <td>B</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
-                <tr>
-                  <td>C</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
-                <tr>
-                  <td rowspan="3" style="line-height: 100px">三</td>
-                  <td>A</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
-                <tr>
-                  <td>B</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
-                <tr>
-                  <td>C</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                  <td>0.3432</td>
-                </tr>
 
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="col-lg-6 col-6">
-            <div class="card card-info">
+        <div class="row">
+          <!--<div class="col-1"></div>-->
+          <div class="col-8">
+            <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title" style="font-size: x-large;">偏差走势图</h3>
+                <h3 class="card-title" style="font-size: x-large;">属性偏差贡献</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
                 </div>
               </div>
               <div class="form-inline">
                 &nbsp;&nbsp;&nbsp;
-                <label>阶段</label>
+                <label>年份</label>
                 <select class="form-control">
-                  <option>一</option>
-                  <option>二</option>
-                  <option>三</option>
+                  <option>Y1</option>
+                  <option>Y2</option>
+                  <option>Y3</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;
-                <label>地区</label>
+                <label>分析系统</label>
                 <select class="form-control">
-                  <option>A</option>
                   <option>B</option>
+                  <option>A</option>
                   <option>C</option>
                 </select>
+                <label>参考系统</label>
                 <select class="form-control">
                   <option>A</option>
                   <option>B</option>
@@ -376,101 +275,26 @@
                 &nbsp;
                 &nbsp;
               </div>
-
-              <div class="row">
-
-                <div class="col-1">
-                </div>
-                <div class="col-3">
-
-                  <div class="custom-control custom-checkbox cus">
-                    <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked="">
-                    <label for="customCheckbox2" class="custom-control-label" style="color: red">南京</label>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="custom-control custom-checkbox cus">
-                    <input class="custom-control-input" type="checkbox" id="customCheckbox1" checked="">
-                    <label for="customCheckbox2" class="custom-control-label" style="color: black">上海</label>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="custom-control custom-checkbox cus">
-                    <input class="custom-control-input" type="checkbox" id="customCheckbox3" checked="">
-                    <label for="customCheckbox2" class="custom-control-label" style="color: blue">杭州</label>
-                  </div>
-                </div>
-              </div>
               <div class="card-body">
-                <div class="chart">
-                  <div class="chartjs-size-monitor">
-                    <div class="chartjs-size-monitor-expand">
-                      <div class=""></div>
-                    </div>
-                    <div class="chartjs-size-monitor-shrink">
-                      <div class=""></div>
-                    </div>
-                  </div>
-                  <canvas id="lineChart" style="height: 251px; min-height: 250px; display: block; width: 356px;"
-                          width="267" height="188" class="chartjs-render-monitor"></canvas>
-                </div>
+
+                <!--<canvas id="pieChart" style="height:230px; min-height:230px"></canvas>-->
+                <div id="bar-chart" style="height: 300px;"></div>
               </div>
               <!-- /.card-body -->
             </div>
+
           </div>
+          <div class="col-2"></div>
 
         </div>
 
         <div class="row">
-          <div class="col-6">
-            <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title" style="font-size: x-large;">属性偏差贡献率</h3>
+          <!--<div class="col-1"></div>-->
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-                </div>
-              </div>
-              <div class="form-inline">
-                &nbsp;&nbsp;&nbsp;
-                <label>阶段</label>
-                <select class="form-control">
-                  <option>一</option>
-                  <option>二</option>
-                  <option>三</option>
-                </select>
-                &nbsp;&nbsp;&nbsp;
-                <label>地区</label>
-                <select class="form-control">
-                  <option>A</option>
-                  <option>B</option>
-                  <option>C</option>
-                </select>
-                <select class="form-control">
-                  <option>A</option>
-                  <option>B</option>
-                  <option>C</option>
-                </select>
-                &nbsp;&nbsp;&nbsp;
-                <button class="btn-primary">确定</button>
-                &nbsp;
-                &nbsp;
-              </div>
-
-              <div class="card-body">
-
-                <canvas id="pieChart" style="height:230px; min-height:230px"></canvas>
-              </div>
-              <!-- /.card-body -->
-            </div>
-
-          </div>
-          <div class="col-6">
+          <div class="col-8">
             <div class="card card-danger">
               <div class="card-header">
-                <h3 class="card-title" style="font-size: x-large;">指标差异分析</h3>
+                <h3 class="card-title" style="font-size: x-large;">指标偏差贡献</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -480,19 +304,20 @@
               </div>
               <div class="form-inline">
                 &nbsp;&nbsp;&nbsp;
-                <label>阶段</label>
+                <label>年份</label>
                 <select class="form-control">
-                  <option>一</option>
-                  <option>二</option>
-                  <option>三</option>
+                  <option>Y1</option>
+                  <option>Y2</option>
+                  <option>Y3</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;
-                <label>地区</label>
+                <label>分析系统</label>
                 <select class="form-control">
-                  <option>A</option>
+                  <option>B</option>
                   <option>B</option>
                   <option>C</option>
                 </select>
+                <label>参考系统</label>
                 <select class="form-control">
                   <option>A</option>
                   <option>B</option>
@@ -501,12 +326,11 @@
                 &nbsp;&nbsp;&nbsp;
                 <label>属性</label>
                 <select class="form-control">
-                  <option>供能可靠性</option>
-                  <option>经济效益性</option>
-                  <option>环境友好性</option>
-                  <option>资源节约性</option>
-                  <option>智能互动性</option>
-                  <option>社会效益性</option>
+                  <option>可靠性</option>
+                  <option>经济性</option>
+                  <option>高效性</option>
+                  <option>社会性</option>
+                  <option>互动性</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;
                 <button class="btn-primary">确定</button>
@@ -515,12 +339,13 @@
               </div>
 
               <div class="card-body">
-                <canvas id="pieChart2" style="height:230px; min-height:230px"></canvas>
+                <!--<canvas id="pieChart2" style="height:230px; min-height:230px"></canvas>-->
+                <div id="bar-chart2" style="height: 300px;"></div>
               </div>
               <!-- /.card-body -->
             </div>
-
           </div>
+          <div class="col-2"></div>
 
         </div>
 
@@ -572,135 +397,129 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- FLOT CHARTS -->
+<script src="plugins/flot/jquery.flot.js"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="plugins/flot-old/jquery.flot.resize.min.js"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="plugins/flot-old/jquery.flot.pie.min.js"></script>
 
 <script>
-  var areaChartOptions = {
-    maintainAspectRatio: false,
-    responsive: true,
-    legend: {
-      display: false
+  /*
+ * BAR CHART
+ * ---------
+ */
+  var bar_data = {
+    data : [[1,-0.0520], [2,-0.0202], [3,0.1597], [4,0.0524], [5,0.0694]],
+    bars: { show: true }
+  }
+  $.plot('#bar-chart', [bar_data], {
+    grid  : {
+      borderWidth: 1,
+      borderColor: '#f3f3f3',
+      tickColor  : '#f3f3f3'
     },
-    scales: {
-      xAxes: [{
-        gridLines: {
-          display: false,
-        }
-      }],
-      yAxes: [{
-        gridLines: {
-          display: false,
-        }
-      }]
+    series: {
+      bars: {
+        show: true, barWidth: 0.5, align: 'center',
+      },
+    },
+    colors: ['#3c8dbc'],
+    xaxis : {
+      ticks: [[1,'高效性'], [2,'经济性'], [3,'可靠性'], [4,'社会性'], [5,'互动性']]
     }
-  };
-
-  var areaChartData = {
-    labels: ['2017', '2018', '2019'],
-    datasets: [
-      {
-        label: '杭州',
-        backgroundColor: 'rgba(60,141,188,0.9)',
-        borderColor: 'blue',
-        pointRadius: false,
-        pointColor: '#3b8bba',
-        pointStrokeColor: 'rgba(60,141,188,1)',
-        pointHighlightFill: '#fff',
-        pointHighlightStroke: 'rgba(60,141,188,1)',
-        data: [66, 90, 91]
-      },
-      {
-        label: '上海',
-        backgroundColor: 'rgba(60,141,188,0.9)',
-        borderColor: 'black',
-        pointRadius: false,
-        pointColor: '#3b8bba',
-        pointStrokeColor: 'rgba(60,141,188,1)',
-        pointHighlightFill: '#fff',
-        pointHighlightStroke: 'rgba(60,141,188,1)',
-        data: [77, 78, 90]
-      },
-      {
-        label: '南京',
-//        backgroundColor: 'rgba(210, 214, 222, 1)',
-        borderColor: 'red',
-        pointRadius: false,
-        pointColor: 'red',
-        pointStrokeColor: 'red',
-        pointHighlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
-        data: [87, 89, 93]
-      },
-    ]
-  };
-
-
-  var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-  var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-  var lineChartData = jQuery.extend(true, {}, areaChartData)
-  lineChartData.datasets[0].fill = false;
-  lineChartData.datasets[1].fill = false;
-  lineChartData.datasets[2].fill = false;
-  lineChartOptions.datasetFill = false
-
-  var lineChart = new Chart(lineChartCanvas, {
-    type: 'line',
-    data: lineChartData,
-    options: lineChartOptions
   })
+
+  /* END BAR CHART */
+  /*
+* BAR CHART
+* ---------
+*/
+  var bar_data2 = {
+    data : [[1,-0.1601], [2,0.0647], [3,0.1278], [4,0.1365], [5,0.1265], [6,0.0988
+    ]],
+    bars: { show: true }
+  }
+  $.plot('#bar-chart2', [bar_data2], {
+    grid  : {
+      borderWidth: 1,
+      borderColor: '#f3f3f3',
+      tickColor  : '#f3f3f3'
+    },
+    series: {
+      bars: {
+        show: true, barWidth: 0.5, align: 'center',
+      },
+    },
+    colors: ['#3c8dbc'],
+    xaxis : {
+      ticks: [[1,'平均失能频率'], [2,'平均失能持续时间'], [3,'电压合格率'], [4,'天然气合格率'], [5,'业务系统信息安全接入率'], [6,'业务系统可用率']]
+    }
+  })
+
+  /* END BAR CHART */
 
   //-------------
   //- PIE CHART -
   //-------------
   // Get context with jQuery - using jQuery's .get() method.
-  var donutData        = {
-    labels: [
-      '供能可靠性','经济效益性','环境友好性','资源节约性','智能互动性','社会效益性',
-    ],
-    datasets: [
-      {
-        data: [0.2,0.2,0.2,0.2,0.2,0.2],
-        backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
-      }
-    ]
-  }
-  var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-  var pieData        = donutData;
-  var pieOptions     = {
-    maintainAspectRatio : false,
-    responsive : true,
-  }
-  //Create pie or douhnut chart
-  // You can switch between pie and douhnut using the method below.
-  var pieChart = new Chart(pieChartCanvas, {
-    type: 'pie',
-    data: pieData,
-    options: pieOptions
-  })
-
-  var donutData1        = {
-    labels: [
-      '供能可靠性','经济效益性','环境友好性','资源节约性','智能互动性','社会效益性',
-    ],
-    datasets: [
-      {
-        data: [0.2,0.2,0.2,0.2,0.2,0.2],
-        backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
-      }
-    ]
-  }
-  var pieChartCanvas = $('#pieChart2').get(0).getContext('2d')
-  var pieData        = donutData1;
-  var pieOptions     = {
-    maintainAspectRatio : false,
-    responsive : true,
-  }
-  //Create pie or douhnut chart
-  // You can switch between pie and douhnut using the method below.
-  var pieChart2 = new Chart(pieChartCanvas, {
-    type: 'pie',
-    data: pieData,
-    options: pieOptions
-  })
+//  var donutData        = {
+//    labels: [
+//      '高效性',
+//      '经济性',
+//      '可靠性',
+//      '社会性',
+//      '互动性',
+//    ],
+//    datasets: [
+//      {
+//        data: [0.21,0.31,0.14,0.18,0.16],
+//        backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+//      }
+//    ]
+//  }
+//  var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+//  var pieData        = donutData;
+//  var pieOptions     = {
+//    maintainAspectRatio : false,
+//    responsive : true,
+//  }
+//  //Create pie or douhnut chart
+//  // You can switch between pie and douhnut using the method below.
+//  var pieChart = new Chart(pieChartCanvas, {
+//    type: 'pie',
+//    data: pieData,
+//    options: pieOptions
+//  })
+//
+//  var donutData1        = {
+//    labels:
+//      [
+//        '能源经济性水平',
+//      '能源售卖收入',
+//      '碳权限收益',
+//      '运营成本',],
+//
+//    datasets: [
+//      {
+//        data: [0.39,0.16,0.26,0.19],
+//        backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+//      }
+//    ]
+//  }
+//  var pieChartCanvas = $('#pieChart2').get(0).getContext('2d')
+//  var pieData        = donutData1;
+//  var pieOptions     = {
+//    maintainAspectRatio : false,
+//    responsive : true,
+//  }
+//  //Create pie or douhnut chart
+//  // You can switch between pie and douhnut using the method below.
+//  var pieChart2 = new Chart(pieChartCanvas, {
+//    type: 'pie',
+//    data: pieData,
+//    options: pieOptions
+//  })
 </script>
 </body>
 </html>
